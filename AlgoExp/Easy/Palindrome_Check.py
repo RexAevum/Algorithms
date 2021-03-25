@@ -14,3 +14,9 @@ def isPalindrome(string):
 		left += 1
 		right -= 1
 	return True
+
+# Solution using recursion
+def isPalindromeRec(string, i=0):
+    # get the coresponding char from the other end
+    j = len(string) - 1 - i
+    return True if string[i] == string[j] and isPalindromeRec(string, i + 1)
