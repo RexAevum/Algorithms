@@ -1,0 +1,1622 @@
+[
+    {
+        "label": "binarySearch",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Binary_Search",
+        "description": "AlgoExp.Easy.Binary_Search",
+        "peekOfCode": "def binarySearch(array, target):\n    # Set up pointers for both ends of the list\n\tleft = 0\n\tright = len(array) - 1\n\twhile right >= left:\n\t\tmid = (left + right) // 2 # the '//' symbol will round down\n\t\tif (target == array[mid]):\n\t\t\treturn mid\n\t\t# because we already check the array[mid], need to skip over the mid index by 1\n\t\telif target > array[mid]:",
+        "detail": "AlgoExp.Easy.Binary_Search",
+        "documentation": {}
+    },
+    {
+        "label": "\tleft",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Binary_Search",
+        "description": "AlgoExp.Easy.Binary_Search",
+        "peekOfCode": "\tleft = 0\n\tright = len(array) - 1\n\twhile right >= left:\n\t\tmid = (left + right) // 2 # the '//' symbol will round down\n\t\tif (target == array[mid]):\n\t\t\treturn mid\n\t\t# because we already check the array[mid], need to skip over the mid index by 1\n\t\telif target > array[mid]:\n\t\t\tleft = mid + 1\n\t\telse:",
+        "detail": "AlgoExp.Easy.Binary_Search",
+        "documentation": {}
+    },
+    {
+        "label": "\tright",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Binary_Search",
+        "description": "AlgoExp.Easy.Binary_Search",
+        "peekOfCode": "\tright = len(array) - 1\n\twhile right >= left:\n\t\tmid = (left + right) // 2 # the '//' symbol will round down\n\t\tif (target == array[mid]):\n\t\t\treturn mid\n\t\t# because we already check the array[mid], need to skip over the mid index by 1\n\t\telif target > array[mid]:\n\t\t\tleft = mid + 1\n\t\telse:\n\t\t\tright = mid - 1",
+        "detail": "AlgoExp.Easy.Binary_Search",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tmid",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Binary_Search",
+        "description": "AlgoExp.Easy.Binary_Search",
+        "peekOfCode": "\t\tmid = (left + right) // 2 # the '//' symbol will round down\n\t\tif (target == array[mid]):\n\t\t\treturn mid\n\t\t# because we already check the array[mid], need to skip over the mid index by 1\n\t\telif target > array[mid]:\n\t\t\tleft = mid + 1\n\t\telse:\n\t\t\tright = mid - 1\n\treturn -1",
+        "detail": "AlgoExp.Easy.Binary_Search",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tleft",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Binary_Search",
+        "description": "AlgoExp.Easy.Binary_Search",
+        "peekOfCode": "\t\t\tleft = mid + 1\n\t\telse:\n\t\t\tright = mid - 1\n\treturn -1",
+        "detail": "AlgoExp.Easy.Binary_Search",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tright",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Binary_Search",
+        "description": "AlgoExp.Easy.Binary_Search",
+        "peekOfCode": "\t\t\tright = mid - 1\n\treturn -1",
+        "detail": "AlgoExp.Easy.Binary_Search",
+        "documentation": {}
+    },
+    {
+        "label": "BinaryTree",
+        "kind": 6,
+        "importPath": "AlgoExp.Easy.Branch_Sums_BST",
+        "description": "AlgoExp.Easy.Branch_Sums_BST",
+        "peekOfCode": "class BinaryTree:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\n# Time - O(n) --> since we must cover all nodes\n# Space - O(n) --> it is O(n/2) since about half of the nodes in BST are leafs\ndef branchSums(root):\n    # create sums list to be returned \n\tsums = []",
+        "detail": "AlgoExp.Easy.Branch_Sums_BST",
+        "documentation": {}
+    },
+    {
+        "label": "branchSums",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Branch_Sums_BST",
+        "description": "AlgoExp.Easy.Branch_Sums_BST",
+        "peekOfCode": "def branchSums(root):\n    # create sums list to be returned \n\tsums = []\n\t# call method for df traversal\n\tgetSumsDfs(root, 0, sums)\n\treturn sums\ndef getSumsDfs(node, givenSum, sums):\n\t# if the current node is null, return --> since the given node does not exist\n\tif node is None:\n\t\treturn",
+        "detail": "AlgoExp.Easy.Branch_Sums_BST",
+        "documentation": {}
+    },
+    {
+        "label": "getSumsDfs",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Branch_Sums_BST",
+        "description": "AlgoExp.Easy.Branch_Sums_BST",
+        "peekOfCode": "def getSumsDfs(node, givenSum, sums):\n\t# if the current node is null, return --> since the given node does not exist\n\tif node is None:\n\t\treturn\n\t# add new nodes value to the runningSum\n\trunningSum = node.value + givenSum\n\t# chekc if node is a leaf\n\tif node.left is None and node.right is None:\n\t\t# add to the sums list the sum value of the given branch\n\t\tsums.append(runningSum)",
+        "detail": "AlgoExp.Easy.Branch_Sums_BST",
+        "documentation": {}
+    },
+    {
+        "label": "\tsums",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Branch_Sums_BST",
+        "description": "AlgoExp.Easy.Branch_Sums_BST",
+        "peekOfCode": "\tsums = []\n\t# call method for df traversal\n\tgetSumsDfs(root, 0, sums)\n\treturn sums\ndef getSumsDfs(node, givenSum, sums):\n\t# if the current node is null, return --> since the given node does not exist\n\tif node is None:\n\t\treturn\n\t# add new nodes value to the runningSum\n\trunningSum = node.value + givenSum",
+        "detail": "AlgoExp.Easy.Branch_Sums_BST",
+        "documentation": {}
+    },
+    {
+        "label": "\trunningSum",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Branch_Sums_BST",
+        "description": "AlgoExp.Easy.Branch_Sums_BST",
+        "peekOfCode": "\trunningSum = node.value + givenSum\n\t# chekc if node is a leaf\n\tif node.left is None and node.right is None:\n\t\t# add to the sums list the sum value of the given branch\n\t\tsums.append(runningSum)\n\t\t# since it's a leaf, cannot call recursive for childern so return\n\t\treturn\n\t# recursive call for dft\n\tgetSumsDfs(node.left, runningSum, sums)\n\tgetSumsDfs(node.right, runningSum, sums)",
+        "detail": "AlgoExp.Easy.Branch_Sums_BST",
+        "documentation": {}
+    },
+    {
+        "label": "bubbleSort",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Bubble_Sort",
+        "description": "AlgoExp.Easy.Bubble_Sort",
+        "peekOfCode": "def bubbleSort(array):\n    if len(array) < 2:\n\t\treturn array\n    isSorted = False\n\t# counter is used to \n\tcounter = 0\n\t# check if sorted -> if any changes were made, we need to check again\n\twhile not isSorted:\n\t\tisSorted = True\n\t\tfor i in range(len(array) - 1 - counter):",
+        "detail": "AlgoExp.Easy.Bubble_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "\tcounter",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Bubble_Sort",
+        "description": "AlgoExp.Easy.Bubble_Sort",
+        "peekOfCode": "\tcounter = 0\n\t# check if sorted -> if any changes were made, we need to check again\n\twhile not isSorted:\n\t\tisSorted = True\n\t\tfor i in range(len(array) - 1 - counter):\n\t\t\tif array[i+1] is not None and array[i] > array[i+1]:\n\t\t\t\ttemp = array[i]\n\t\t\t\tarray[i] = array[i+1]\n\t\t\t\tarray[i+1] = temp\n\t\t\t\tisSorted = False",
+        "detail": "AlgoExp.Easy.Bubble_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tisSorted",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Bubble_Sort",
+        "description": "AlgoExp.Easy.Bubble_Sort",
+        "peekOfCode": "\t\tisSorted = True\n\t\tfor i in range(len(array) - 1 - counter):\n\t\t\tif array[i+1] is not None and array[i] > array[i+1]:\n\t\t\t\ttemp = array[i]\n\t\t\t\tarray[i] = array[i+1]\n\t\t\t\tarray[i+1] = temp\n\t\t\t\tisSorted = False\n\t\tcounter += 1\n\treturn array",
+        "detail": "AlgoExp.Easy.Bubble_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\ttemp",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Bubble_Sort",
+        "description": "AlgoExp.Easy.Bubble_Sort",
+        "peekOfCode": "\t\t\t\ttemp = array[i]\n\t\t\t\tarray[i] = array[i+1]\n\t\t\t\tarray[i+1] = temp\n\t\t\t\tisSorted = False\n\t\tcounter += 1\n\treturn array",
+        "detail": "AlgoExp.Easy.Bubble_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tarray[i]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Bubble_Sort",
+        "description": "AlgoExp.Easy.Bubble_Sort",
+        "peekOfCode": "\t\t\t\tarray[i] = array[i+1]\n\t\t\t\tarray[i+1] = temp\n\t\t\t\tisSorted = False\n\t\tcounter += 1\n\treturn array",
+        "detail": "AlgoExp.Easy.Bubble_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tarray[i+1]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Bubble_Sort",
+        "description": "AlgoExp.Easy.Bubble_Sort",
+        "peekOfCode": "\t\t\t\tarray[i+1] = temp\n\t\t\t\tisSorted = False\n\t\tcounter += 1\n\treturn array",
+        "detail": "AlgoExp.Easy.Bubble_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tisSorted",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Bubble_Sort",
+        "description": "AlgoExp.Easy.Bubble_Sort",
+        "peekOfCode": "\t\t\t\tisSorted = False\n\t\tcounter += 1\n\treturn array",
+        "detail": "AlgoExp.Easy.Bubble_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "caesarCipherEncryptor",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "description": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "peekOfCode": "def caesarCipherEncryptor(string, key):\n    # Write your code here.\n\tcipher = []\n\tkey = key % 26\n    for i in range(len(string)):\n\t\tval = ord(string[i])\n\t\tprint(val)\n\t\tif val + key > 122:\n\t\t\t\tdif = (val + key) % 122\n\t\t\t\tval = 96 + dif",
+        "detail": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "documentation": {}
+    },
+    {
+        "label": "caesarCipherEncryptorGiven",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "description": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "peekOfCode": "def caesarCipherEncryptorGiven(string, key):\n    newString = []\n    newKey = key % 26\n    for letter in string:\n        newString.append(getNewLetter(letter, newKey))\n    return \"\".join(newString)\ndef getNewLetter(letter, key):\n    newLetterCode = ord(letter) + key\n    # if new letter is out of the alphabet, wrap around\n    return chr(newLetterCode) if newLetterCode <= 122 else chr(96 + (newLetterCode % 122))",
+        "detail": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "documentation": {}
+    },
+    {
+        "label": "getNewLetter",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "description": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "peekOfCode": "def getNewLetter(letter, key):\n    newLetterCode = ord(letter) + key\n    # if new letter is out of the alphabet, wrap around\n    return chr(newLetterCode) if newLetterCode <= 122 else chr(96 + (newLetterCode % 122))",
+        "detail": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "documentation": {}
+    },
+    {
+        "label": "\tcipher",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "description": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "peekOfCode": "\tcipher = []\n\tkey = key % 26\n    for i in range(len(string)):\n\t\tval = ord(string[i])\n\t\tprint(val)\n\t\tif val + key > 122:\n\t\t\t\tdif = (val + key) % 122\n\t\t\t\tval = 96 + dif\n\t\telse:\n\t\t\tval += key",
+        "detail": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "documentation": {}
+    },
+    {
+        "label": "\tkey",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "description": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "peekOfCode": "\tkey = key % 26\n    for i in range(len(string)):\n\t\tval = ord(string[i])\n\t\tprint(val)\n\t\tif val + key > 122:\n\t\t\t\tdif = (val + key) % 122\n\t\t\t\tval = 96 + dif\n\t\telse:\n\t\t\tval += key\n\t\tprint(\"val after key: {} and char: {}\".format(val, chr(val)))",
+        "detail": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tval",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "description": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "peekOfCode": "\t\tval = ord(string[i])\n\t\tprint(val)\n\t\tif val + key > 122:\n\t\t\t\tdif = (val + key) % 122\n\t\t\t\tval = 96 + dif\n\t\telse:\n\t\t\tval += key\n\t\tprint(\"val after key: {} and char: {}\".format(val, chr(val)))\n\t\tcipher.append(chr(val))\n\treturn \"\".join(cipher)",
+        "detail": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tdif",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "description": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "peekOfCode": "\t\t\t\tdif = (val + key) % 122\n\t\t\t\tval = 96 + dif\n\t\telse:\n\t\t\tval += key\n\t\tprint(\"val after key: {} and char: {}\".format(val, chr(val)))\n\t\tcipher.append(chr(val))\n\treturn \"\".join(cipher)\n# Given Solution\n# Time - O(n)\n# Space - O(n)",
+        "detail": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tval",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "description": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "peekOfCode": "\t\t\t\tval = 96 + dif\n\t\telse:\n\t\t\tval += key\n\t\tprint(\"val after key: {} and char: {}\".format(val, chr(val)))\n\t\tcipher.append(chr(val))\n\treturn \"\".join(cipher)\n# Given Solution\n# Time - O(n)\n# Space - O(n)\ndef caesarCipherEncryptorGiven(string, key):",
+        "detail": "AlgoExp.Easy.Caesar_Cipher_Encryptor",
+        "documentation": {}
+    },
+    {
+        "label": "classPhotos",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Class_Photos",
+        "description": "AlgoExp.Easy.Class_Photos",
+        "peekOfCode": "def classPhotos(redShirtHeights, blueShirtHeights):\n    # Sort both lists in desc order so that we can check which list has the tallest student for them to be in the back row\n    redShirtHeights.sort(reverse=True)\n\tblueShirtHeights.sort(reverse=True)\n\t# check which class is in the back\n\tredInBack = True if redShirtHeights[0] > blueShirtHeights[0] else False\n\ti = 0\n\twhile i < len(redShirtHeights):\n\t\tif redShirtHeights[i] == blueShirtHeights[i]:\n\t\t\treturn False",
+        "detail": "AlgoExp.Easy.Class_Photos",
+        "documentation": {}
+    },
+    {
+        "label": "\tredInBack",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Class_Photos",
+        "description": "AlgoExp.Easy.Class_Photos",
+        "peekOfCode": "\tredInBack = True if redShirtHeights[0] > blueShirtHeights[0] else False\n\ti = 0\n\twhile i < len(redShirtHeights):\n\t\tif redShirtHeights[i] == blueShirtHeights[i]:\n\t\t\treturn False\n\t\tif redShirtHeights[i] < blueShirtHeights[i] and redInBack:\n\t\t\treturn False\n\t\tif redShirtHeights[i] > blueShirtHeights[i] and not redInBack:\n\t\t\treturn False\n\t\ti += 1",
+        "detail": "AlgoExp.Easy.Class_Photos",
+        "documentation": {}
+    },
+    {
+        "label": "\ti",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Class_Photos",
+        "description": "AlgoExp.Easy.Class_Photos",
+        "peekOfCode": "\ti = 0\n\twhile i < len(redShirtHeights):\n\t\tif redShirtHeights[i] == blueShirtHeights[i]:\n\t\t\treturn False\n\t\tif redShirtHeights[i] < blueShirtHeights[i] and redInBack:\n\t\t\treturn False\n\t\tif redShirtHeights[i] > blueShirtHeights[i] and not redInBack:\n\t\t\treturn False\n\t\ti += 1\n\treturn True",
+        "detail": "AlgoExp.Easy.Class_Photos",
+        "documentation": {}
+    },
+    {
+        "label": "Node",
+        "kind": 6,
+        "importPath": "AlgoExp.Easy.DFS",
+        "description": "AlgoExp.Easy.DFS",
+        "peekOfCode": "class Node:\n    def __init__(self, name):\n        self.children = []\n        self.name = name\n    def addChild(self, name):\n        self.children.append(Node(name))\n        return self\n\t# Time - O(v + e) | Space - O(v)\n    def depthFirstSearch(self, array):\n        # Write your code here.",
+        "detail": "AlgoExp.Easy.DFS",
+        "documentation": {}
+    },
+    {
+        "label": "findClosestValueInBst",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Find_Closest_Value_In_BST",
+        "description": "AlgoExp.Easy.Find_Closest_Value_In_BST",
+        "peekOfCode": "def findClosestValueInBst(tree, target):\n\treturn work(tree, target, tree.value)\ndef work (tree, target, closest):\n\t# if at the end of the tree, return last closest value\n\tprint(closest)\n\tif tree is None:\n\t\treturn closest\n\t# check if the distance between the current closest and the target is more than the new node value\n\tif abs(tree.value - target) < abs(closest - target):\n\t\tclosest = tree.value",
+        "detail": "AlgoExp.Easy.Find_Closest_Value_In_BST",
+        "documentation": {}
+    },
+    {
+        "label": "wor",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Find_Closest_Value_In_BST",
+        "description": "AlgoExp.Easy.Find_Closest_Value_In_BST",
+        "peekOfCode": "def work (tree, target, closest):\n\t# if at the end of the tree, return last closest value\n\tprint(closest)\n\tif tree is None:\n\t\treturn closest\n\t# check if the distance between the current closest and the target is more than the new node value\n\tif abs(tree.value - target) < abs(closest - target):\n\t\tclosest = tree.value\n\t# recurse through sub tree and return the closest value\t\n\tif tree.value > target:",
+        "detail": "AlgoExp.Easy.Find_Closest_Value_In_BST",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tclosest",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Find_Closest_Value_In_BST",
+        "description": "AlgoExp.Easy.Find_Closest_Value_In_BST",
+        "peekOfCode": "\t\tclosest = tree.value\n\t# recurse through sub tree and return the closest value\t\n\tif tree.value > target:\n\t\treturn work(tree.left, target, closest) # make sure not to forget return with recursion\n\telif tree.value < target:\n\t\treturn work(tree.right, target, closest)\n\telse:\n\t\treturn closest",
+        "detail": "AlgoExp.Easy.Find_Closest_Value_In_BST",
+        "documentation": {}
+    },
+    {
+        "label": "short_and_log",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "description": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "peekOfCode": "def short_and_log(string):\n    currentLong = ''\n    currentShort = string\n    chars = ['!', '@', '#', '$', '%', '?', ',', '.', ' ']\n    # itterate through the string and find the longest and shortest words\n    word = ''\n    for i in range(0, len(string)):\n        ch = string[i]\n        print(ch, i, len(string))\n        if ch in chars:",
+        "detail": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "documentation": {}
+    },
+    {
+        "label": "test_001",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "description": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "peekOfCode": "def test_001():\n    assert short_and_log(\"hello worlds\") == ['worlds', 'hello']\ndef test_002():\n    assert short_and_log('HELLO WORLDS') == ['worlds', 'hello']\ndef test_003():\n    assert short_and_log('') == ['', '']\ndef test_004():\n    assert short_and_log(\"Hello worlds!\") == ['worlds', 'hello']",
+        "detail": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "documentation": {}
+    },
+    {
+        "label": "test_002",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "description": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "peekOfCode": "def test_002():\n    assert short_and_log('HELLO WORLDS') == ['worlds', 'hello']\ndef test_003():\n    assert short_and_log('') == ['', '']\ndef test_004():\n    assert short_and_log(\"Hello worlds!\") == ['worlds', 'hello']",
+        "detail": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "documentation": {}
+    },
+    {
+        "label": "test_003",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "description": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "peekOfCode": "def test_003():\n    assert short_and_log('') == ['', '']\ndef test_004():\n    assert short_and_log(\"Hello worlds!\") == ['worlds', 'hello']",
+        "detail": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "documentation": {}
+    },
+    {
+        "label": "test_004",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "description": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "peekOfCode": "def test_004():\n    assert short_and_log(\"Hello worlds!\") == ['worlds', 'hello']",
+        "detail": "AlgoExp.Easy.Find_longest_and_shortest_words",
+        "documentation": {}
+    },
+    {
+        "label": "findThreeLargestNumbers",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Find_Three_Largest",
+        "description": "AlgoExp.Easy.Find_Three_Largest",
+        "peekOfCode": "def findThreeLargestNumbers(array):\n    # Write your code here.\n    results = [None, None, None]\n\tfor nr in array:\n\t\tfindLargest(results, nr)\n\treturn results\ndef findLargest(list, nr):\n\tif list[2] is None or list[2] < nr:\n\t\tshiftLargest(list, nr, 2)\n\telif list[1] is None or list[1] < nr:",
+        "detail": "AlgoExp.Easy.Find_Three_Largest",
+        "documentation": {}
+    },
+    {
+        "label": "findLargest",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Find_Three_Largest",
+        "description": "AlgoExp.Easy.Find_Three_Largest",
+        "peekOfCode": "def findLargest(list, nr):\n\tif list[2] is None or list[2] < nr:\n\t\tshiftLargest(list, nr, 2)\n\telif list[1] is None or list[1] < nr:\n\t\tshiftLargest(list, nr, 1)\n\telif list[0] is None or list[0] < nr:\n\t\tshiftLargest(list, nr, 0)\ndef shiftLargest(list, nr, index):\n\tfor i in range(index + 1): # +1 due to range being non-inclusive\n\t\tif i == index:",
+        "detail": "AlgoExp.Easy.Find_Three_Largest",
+        "documentation": {}
+    },
+    {
+        "label": "shiftLargest",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Find_Three_Largest",
+        "description": "AlgoExp.Easy.Find_Three_Largest",
+        "peekOfCode": "def shiftLargest(list, nr, index):\n\tfor i in range(index + 1): # +1 due to range being non-inclusive\n\t\tif i == index:\n\t\t\tlist[i] = nr\n\t\telse:\n\t\t\tlist[i] = list[i+1]",
+        "detail": "AlgoExp.Easy.Find_Three_Largest",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tlist[i]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Find_Three_Largest",
+        "description": "AlgoExp.Easy.Find_Three_Largest",
+        "peekOfCode": "\t\t\tlist[i] = nr\n\t\telse:\n\t\t\tlist[i] = list[i+1]",
+        "detail": "AlgoExp.Easy.Find_Three_Largest",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tlist[i]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Find_Three_Largest",
+        "description": "AlgoExp.Easy.Find_Three_Largest",
+        "peekOfCode": "\t\t\tlist[i] = list[i+1]",
+        "detail": "AlgoExp.Easy.Find_Three_Largest",
+        "documentation": {}
+    },
+    {
+        "label": "generateDocument",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Generate_Document",
+        "description": "AlgoExp.Easy.Generate_Document",
+        "peekOfCode": "def generateDocument(characters, document):\n    if len(characters) < len(document):\n\t\treturn False\n\tchars = {}\n\t# check what chars are available\n\tfor i in characters:\n\t\tif i not in chars:\n\t\t\tchars[i] = 1\n\t\telse:\n\t\t\tchars[i] += 1",
+        "detail": "AlgoExp.Easy.Generate_Document",
+        "documentation": {}
+    },
+    {
+        "label": "generateDocumentGiven",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Generate_Document",
+        "description": "AlgoExp.Easy.Generate_Document",
+        "peekOfCode": "def generateDocumentGiven(characters, document):\n    if len(characters) < len(document):\n\t\treturn False\n\tchars = {}\n\t# check what chars are available\n\tfor i in characters:\n\t\tif i not in chars:\n\t\t\tchars[i] = 0\n\t\tchars[i] += 1\n\t# check if we can make document ",
+        "detail": "AlgoExp.Easy.Generate_Document",
+        "documentation": {}
+    },
+    {
+        "label": "\tchars",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Generate_Document",
+        "description": "AlgoExp.Easy.Generate_Document",
+        "peekOfCode": "\tchars = {}\n\t# check what chars are available\n\tfor i in characters:\n\t\tif i not in chars:\n\t\t\tchars[i] = 1\n\t\telse:\n\t\t\tchars[i] += 1\n\t# check if we can make document \n\tfor i in document:\n\t\tif i not in chars:",
+        "detail": "AlgoExp.Easy.Generate_Document",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tchars[i]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Generate_Document",
+        "description": "AlgoExp.Easy.Generate_Document",
+        "peekOfCode": "\t\t\tchars[i] = 1\n\t\telse:\n\t\t\tchars[i] += 1\n\t# check if we can make document \n\tfor i in document:\n\t\tif i not in chars:\n\t\t\treturn False\n\t\telse:\n\t\t\tchars[i] -= 1\n\t\t\tif chars[i] < 0:",
+        "detail": "AlgoExp.Easy.Generate_Document",
+        "documentation": {}
+    },
+    {
+        "label": "\tchars",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Generate_Document",
+        "description": "AlgoExp.Easy.Generate_Document",
+        "peekOfCode": "\tchars = {}\n\t# check what chars are available\n\tfor i in characters:\n\t\tif i not in chars:\n\t\t\tchars[i] = 0\n\t\tchars[i] += 1\n\t# check if we can make document \n\tfor i in document:\n\t\tif i not in chars or chars[i] == 0:\n\t\t\treturn False",
+        "detail": "AlgoExp.Easy.Generate_Document",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tchars[i]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Generate_Document",
+        "description": "AlgoExp.Easy.Generate_Document",
+        "peekOfCode": "\t\t\tchars[i] = 0\n\t\tchars[i] += 1\n\t# check if we can make document \n\tfor i in document:\n\t\tif i not in chars or chars[i] == 0:\n\t\t\treturn False\n        chars[i] -= 1\n    return True",
+        "detail": "AlgoExp.Easy.Generate_Document",
+        "documentation": {}
+    },
+    {
+        "label": "insertionSort",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Insertion_Sort",
+        "description": "AlgoExp.Easy.Insertion_Sort",
+        "peekOfCode": "def insertionSort(array):\n    # Check if we need to sort array\n    if len(array) < 2:\n\t\treturn array\n\t# starting from the second item check if current is larger than the previos\n\tfor i in range(1, len(array)):\n\t\t# incremented on in the while loop\n\t\tj = i\n\t\t# keep swapping the items until they are in order\n\t\twhile j > 0 and array[j] < array[j-1]:",
+        "detail": "AlgoExp.Easy.Insertion_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "swap",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Insertion_Sort",
+        "description": "AlgoExp.Easy.Insertion_Sort",
+        "peekOfCode": "def swap(j, i, arr):\n\tarr[j], arr[i] = arr[i], arr[j]",
+        "detail": "AlgoExp.Easy.Insertion_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tj",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Insertion_Sort",
+        "description": "AlgoExp.Easy.Insertion_Sort",
+        "peekOfCode": "\t\tj = i\n\t\t# keep swapping the items until they are in order\n\t\twhile j > 0 and array[j] < array[j-1]:\n\t\t\tswap(j, j-1, array)\n\t\t\tj -= 1\n\treturn array\ndef swap(j, i, arr):\n\tarr[j], arr[i] = arr[i], arr[j]",
+        "detail": "AlgoExp.Easy.Insertion_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "minimumWaitingTime",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Minimum_Waiting_Time",
+        "description": "AlgoExp.Easy.Minimum_Waiting_Time",
+        "peekOfCode": "def minimumWaitingTime(queries):\n    # Sort list asc for optimal waittime\n    queries.sort(reverse=False)\n\twaitTime = 0\n\tqueryTime = 0\n\t# itterate through the queries add sum up the wait time\n\tfor time in queries:\n\t\twaitTime += queryTime\n\t\tqueryTime += time\n\treturn waitTime",
+        "detail": "AlgoExp.Easy.Minimum_Waiting_Time",
+        "documentation": {}
+    },
+    {
+        "label": "\twaitTime",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Minimum_Waiting_Time",
+        "description": "AlgoExp.Easy.Minimum_Waiting_Time",
+        "peekOfCode": "\twaitTime = 0\n\tqueryTime = 0\n\t# itterate through the queries add sum up the wait time\n\tfor time in queries:\n\t\twaitTime += queryTime\n\t\tqueryTime += time\n\treturn waitTime",
+        "detail": "AlgoExp.Easy.Minimum_Waiting_Time",
+        "documentation": {}
+    },
+    {
+        "label": "\tqueryTime",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Minimum_Waiting_Time",
+        "description": "AlgoExp.Easy.Minimum_Waiting_Time",
+        "peekOfCode": "\tqueryTime = 0\n\t# itterate through the queries add sum up the wait time\n\tfor time in queries:\n\t\twaitTime += queryTime\n\t\tqueryTime += time\n\treturn waitTime",
+        "detail": "AlgoExp.Easy.Minimum_Waiting_Time",
+        "documentation": {}
+    },
+    {
+        "label": "nodeDepthsRec",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Node_Depth",
+        "description": "AlgoExp.Easy.Node_Depth",
+        "peekOfCode": "def nodeDepthsRec(root):\n    # Write your code here.\n    depth = 0\n\treturn getDepthSum(root, depth)\ndef getDepthSum(node, d):\n\t# if node doesnt exist, return 0 since it does not have a depth\n\tif node is None:\n\t\treturn 0\n\t# add the current depth\n\treturn d + getDepthSum(node.left, d + 1) + getDepthSum(node.right, d + 1)",
+        "detail": "AlgoExp.Easy.Node_Depth",
+        "documentation": {}
+    },
+    {
+        "label": "getDepthSum",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Node_Depth",
+        "description": "AlgoExp.Easy.Node_Depth",
+        "peekOfCode": "def getDepthSum(node, d):\n\t# if node doesnt exist, return 0 since it does not have a depth\n\tif node is None:\n\t\treturn 0\n\t# add the current depth\n\treturn d + getDepthSum(node.left, d + 1) + getDepthSum(node.right, d + 1)",
+        "detail": "AlgoExp.Easy.Node_Depth",
+        "documentation": {}
+    },
+    {
+        "label": "nonConstructibleChange",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Non_Constructable_Change",
+        "description": "AlgoExp.Easy.Non_Constructable_Change",
+        "peekOfCode": "def nonConstructibleChange(coins):\n    # first sort the array\n\tcoins.sort()\n    change = 0 # for sum of coins\n    # for each coin check if it's larger than the cumulative sum of change + 1\n    # if it greater, that means we cannot create change + 1\n    # if less or equal --> can create all subsets of the superset number\n\tfor coin in coins:\n\t\tif change + 1 < coin:\n\t\t\treturn change + 1",
+        "detail": "AlgoExp.Easy.Non_Constructable_Change",
+        "documentation": {}
+    },
+    {
+        "label": "getNthFib",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Nth_Fibonacci",
+        "description": "AlgoExp.Easy.Nth_Fibonacci",
+        "peekOfCode": "def getNthFib(n):\n    if n == 1:\n\t\treturn 0\n\telif n == 2:\n\t\treturn 1\n\treturn getNthFib(n-1) + getNthFib(n-2)\n# Had to modify function call\n# Time = O(n) --> pulling from hash is in constant time, so each fib number will only be calculated once \n# Space = O(n)\ndef getNthFib(n, memory={1 : 0, 2 : 1}):",
+        "detail": "AlgoExp.Easy.Nth_Fibonacci",
+        "documentation": {}
+    },
+    {
+        "label": "getNthFib",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Nth_Fibonacci",
+        "description": "AlgoExp.Easy.Nth_Fibonacci",
+        "peekOfCode": "def getNthFib(n, memory={1 : 0, 2 : 1}):\n    # Write your code here.\n\tif n in memory:\n\t\treturn memory[n]\n\telse:\n\t\tmemory[n] = getNthFib(n-1, memory) + getNthFib(n-2, memory)\n\t\treturn memory[n]\n# Time - O(n) | Space - O(n)\ndef getNthFib(n):\n    # Write your code here.",
+        "detail": "AlgoExp.Easy.Nth_Fibonacci",
+        "documentation": {}
+    },
+    {
+        "label": "getNthFib",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Nth_Fibonacci",
+        "description": "AlgoExp.Easy.Nth_Fibonacci",
+        "peekOfCode": "def getNthFib(n):\n    # Write your code here.\n    fib = [0, 1]\n\ti = 2\n\twhile i <= n:\n\t\tnextNr = fib[i-1] + fib[i-2]\n\t\tfib.append(nextNr)\n\t\ti += 1\n\treturn fib[n-1]\n# Time - O(n) | Space - O(1)",
+        "detail": "AlgoExp.Easy.Nth_Fibonacci",
+        "documentation": {}
+    },
+    {
+        "label": "getNthFib",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Nth_Fibonacci",
+        "description": "AlgoExp.Easy.Nth_Fibonacci",
+        "peekOfCode": "def getNthFib(n):\n    # Write your code here.\n    last2 = [0, 1]\n\ti = 3 # first 2 are known\n\twhile i <= n:\n\t\tnextFib = last2[0] + last2[1]\n\t\tlast2[0] = last2[1]\n\t\tlast2[1] = nextFib\n\t\ti += 1\n\treturn last2[1] if n > 1 else last2[0]",
+        "detail": "AlgoExp.Easy.Nth_Fibonacci",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tmemory[n]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Nth_Fibonacci",
+        "description": "AlgoExp.Easy.Nth_Fibonacci",
+        "peekOfCode": "\t\tmemory[n] = getNthFib(n-1, memory) + getNthFib(n-2, memory)\n\t\treturn memory[n]\n# Time - O(n) | Space - O(n)\ndef getNthFib(n):\n    # Write your code here.\n    fib = [0, 1]\n\ti = 2\n\twhile i <= n:\n\t\tnextNr = fib[i-1] + fib[i-2]\n\t\tfib.append(nextNr)",
+        "detail": "AlgoExp.Easy.Nth_Fibonacci",
+        "documentation": {}
+    },
+    {
+        "label": "\ti",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Nth_Fibonacci",
+        "description": "AlgoExp.Easy.Nth_Fibonacci",
+        "peekOfCode": "\ti = 2\n\twhile i <= n:\n\t\tnextNr = fib[i-1] + fib[i-2]\n\t\tfib.append(nextNr)\n\t\ti += 1\n\treturn fib[n-1]\n# Time - O(n) | Space - O(1)\ndef getNthFib(n):\n    # Write your code here.\n    last2 = [0, 1]",
+        "detail": "AlgoExp.Easy.Nth_Fibonacci",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tnextNr",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Nth_Fibonacci",
+        "description": "AlgoExp.Easy.Nth_Fibonacci",
+        "peekOfCode": "\t\tnextNr = fib[i-1] + fib[i-2]\n\t\tfib.append(nextNr)\n\t\ti += 1\n\treturn fib[n-1]\n# Time - O(n) | Space - O(1)\ndef getNthFib(n):\n    # Write your code here.\n    last2 = [0, 1]\n\ti = 3 # first 2 are known\n\twhile i <= n:",
+        "detail": "AlgoExp.Easy.Nth_Fibonacci",
+        "documentation": {}
+    },
+    {
+        "label": "\ti",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Nth_Fibonacci",
+        "description": "AlgoExp.Easy.Nth_Fibonacci",
+        "peekOfCode": "\ti = 3 # first 2 are known\n\twhile i <= n:\n\t\tnextFib = last2[0] + last2[1]\n\t\tlast2[0] = last2[1]\n\t\tlast2[1] = nextFib\n\t\ti += 1\n\treturn last2[1] if n > 1 else last2[0]",
+        "detail": "AlgoExp.Easy.Nth_Fibonacci",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tnextFib",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Nth_Fibonacci",
+        "description": "AlgoExp.Easy.Nth_Fibonacci",
+        "peekOfCode": "\t\tnextFib = last2[0] + last2[1]\n\t\tlast2[0] = last2[1]\n\t\tlast2[1] = nextFib\n\t\ti += 1\n\treturn last2[1] if n > 1 else last2[0]",
+        "detail": "AlgoExp.Easy.Nth_Fibonacci",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tlast2[0]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Nth_Fibonacci",
+        "description": "AlgoExp.Easy.Nth_Fibonacci",
+        "peekOfCode": "\t\tlast2[0] = last2[1]\n\t\tlast2[1] = nextFib\n\t\ti += 1\n\treturn last2[1] if n > 1 else last2[0]",
+        "detail": "AlgoExp.Easy.Nth_Fibonacci",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tlast2[1]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Nth_Fibonacci",
+        "description": "AlgoExp.Easy.Nth_Fibonacci",
+        "peekOfCode": "\t\tlast2[1] = nextFib\n\t\ti += 1\n\treturn last2[1] if n > 1 else last2[0]",
+        "detail": "AlgoExp.Easy.Nth_Fibonacci",
+        "documentation": {}
+    },
+    {
+        "label": "isPalindrome",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Palindrome_Check",
+        "description": "AlgoExp.Easy.Palindrome_Check",
+        "peekOfCode": "def isPalindrome(string):\n\tif len(string) < 2:\n\t\treturn True\n    # Set up 2 pointers for comparison\n    left = 0\n\tright = len(string)-1\n\t# while the pointers have not met, compare\n\twhile left < right:\n\t\tif string[left] != string[right]:\n\t\t\treturn False",
+        "detail": "AlgoExp.Easy.Palindrome_Check",
+        "documentation": {}
+    },
+    {
+        "label": "isPalindromeRec",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Palindrome_Check",
+        "description": "AlgoExp.Easy.Palindrome_Check",
+        "peekOfCode": "def isPalindromeRec(string, i=0):\n    # get the coresponding char from the other end\n    j = len(string) - 1 - i\n    return True if string[i] == string[j] and isPalindromeRec(string, i + 1)",
+        "detail": "AlgoExp.Easy.Palindrome_Check",
+        "documentation": {}
+    },
+    {
+        "label": "\tright",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Palindrome_Check",
+        "description": "AlgoExp.Easy.Palindrome_Check",
+        "peekOfCode": "\tright = len(string)-1\n\t# while the pointers have not met, compare\n\twhile left < right:\n\t\tif string[left] != string[right]:\n\t\t\treturn False\n\t\tleft += 1\n\t\tright -= 1\n\treturn True\n# Solution using recursion\ndef isPalindromeRec(string, i=0):",
+        "detail": "AlgoExp.Easy.Palindrome_Check",
+        "documentation": {}
+    },
+    {
+        "label": "productSum",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Product_Sum",
+        "description": "AlgoExp.Easy.Product_Sum",
+        "peekOfCode": "def productSum(array, depth=1):\n    # Check if None\n    if array is None:\n\t\treturn 0\n\telse:\n\t\tcurrentSum = 0\n\t\tfor item in array:\n\t\t\tif type(item) == int:\n\t\t\t\tcurrentSum += item\n\t\t\telse:",
+        "detail": "AlgoExp.Easy.Product_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tcurrentSum",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Product_Sum",
+        "description": "AlgoExp.Easy.Product_Sum",
+        "peekOfCode": "\t\tcurrentSum = 0\n\t\tfor item in array:\n\t\t\tif type(item) == int:\n\t\t\t\tcurrentSum += item\n\t\t\telse:\n\t\t\t\tcurrentSum += productSum(item, depth + 1)\n        # \n\t\treturn currentSum * depth",
+        "detail": "AlgoExp.Easy.Product_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "LinkedList",
+        "kind": 6,
+        "importPath": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "description": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "peekOfCode": "class LinkedList:\n    def __init__(self, value):\n        self.value = value\n        self.next = None\n# Time - O(n) | Space - O(1)\ndef removeDuplicatesFromLinkedList(linkedList):\n    # Grap first node of list\n\tcurrent = linkedList\n\twhile current is not None:\n\t\tnextNode = current.next",
+        "detail": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "documentation": {}
+    },
+    {
+        "label": "removeDuplicatesFromLinkedList",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "description": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "peekOfCode": "def removeDuplicatesFromLinkedList(linkedList):\n    # Grap first node of list\n\tcurrent = linkedList\n\twhile current is not None:\n\t\tnextNode = current.next\n\t\t# Jump over the nodes with the same value as current\n\t\t# Use while instead of if since can be more than 1 number in a row\n\t\twhile nextNode is not None and current.value == nextNode.value: # check for none first, otherwise get an error\n\t\t\tnextNode = nextNode.next\n\t\t# reconnect list\t",
+        "detail": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "documentation": {}
+    },
+    {
+        "label": "\tcurrent",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "description": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "peekOfCode": "\tcurrent = linkedList\n\twhile current is not None:\n\t\tnextNode = current.next\n\t\t# Jump over the nodes with the same value as current\n\t\t# Use while instead of if since can be more than 1 number in a row\n\t\twhile nextNode is not None and current.value == nextNode.value: # check for none first, otherwise get an error\n\t\t\tnextNode = nextNode.next\n\t\t# reconnect list\t\n\t\tcurrent.next = nextNode\n\t\t# move pointer",
+        "detail": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tnextNode",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "description": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "peekOfCode": "\t\tnextNode = current.next\n\t\t# Jump over the nodes with the same value as current\n\t\t# Use while instead of if since can be more than 1 number in a row\n\t\twhile nextNode is not None and current.value == nextNode.value: # check for none first, otherwise get an error\n\t\t\tnextNode = nextNode.next\n\t\t# reconnect list\t\n\t\tcurrent.next = nextNode\n\t\t# move pointer\n\t\tcurrent = nextNode\n\treturn linkedList",
+        "detail": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tnextNode",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "description": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "peekOfCode": "\t\t\tnextNode = nextNode.next\n\t\t# reconnect list\t\n\t\tcurrent.next = nextNode\n\t\t# move pointer\n\t\tcurrent = nextNode\n\treturn linkedList",
+        "detail": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tcurrent.next",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "description": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "peekOfCode": "\t\tcurrent.next = nextNode\n\t\t# move pointer\n\t\tcurrent = nextNode\n\treturn linkedList",
+        "detail": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tcurrent",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "description": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "peekOfCode": "\t\tcurrent = nextNode\n\treturn linkedList",
+        "detail": "AlgoExp.Easy.Remove_Duplicates_From_Linked_List",
+        "documentation": {}
+    },
+    {
+        "label": "runLengthEncoding",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Run_Length_Encoder",
+        "description": "AlgoExp.Easy.Run_Length_Encoder",
+        "peekOfCode": "def runLengthEncoding(string):\n\t# if a string is only once char, can return right away\n    if len(string) < 2:\n\t\treturn \"1{}\".format(string[0])\n    encoded = [] # store the new string\n\tcurrent = string[0] \n\tcount = 1\n\tfor i in range(1, len(string)):\n\t\tif current == string[i]:\n\t\t\tcount += 1",
+        "detail": "AlgoExp.Easy.Run_Length_Encoder",
+        "documentation": {}
+    },
+    {
+        "label": "encodeToString",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Run_Length_Encoder",
+        "description": "AlgoExp.Easy.Run_Length_Encoder",
+        "peekOfCode": "def encodeToString(str, char, count):\n\tif count >= 10:\n\t\tcount -= 9\n\t\tstr.append(\"9{}\".format(char))\n\t\treturn encodeToString(str, char, count)\n\telse:\n\t\tstr.append(\"{}{}\".format(count, char))\n\t\treturn\n# Given solution\ndef runLengthEncodingGiven(string):",
+        "detail": "AlgoExp.Easy.Run_Length_Encoder",
+        "documentation": {}
+    },
+    {
+        "label": "runLengthEncodingGiven",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Run_Length_Encoder",
+        "description": "AlgoExp.Easy.Run_Length_Encoder",
+        "peekOfCode": "def runLengthEncodingGiven(string):\n    # Write your code here.\n    encoded = []\n\tcurrLen = 1\n\tfor i in range(1, len(string)):\n\t\tcurrentChar = string[i]\n\t\tprevChar = string[i-1]\n\t\t# check if the same\n\t\tif currentChar != prevChar or currLen == 9:\n\t\t\tencoded.append(str(currLen))",
+        "detail": "AlgoExp.Easy.Run_Length_Encoder",
+        "documentation": {}
+    },
+    {
+        "label": "\tcurrent",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Run_Length_Encoder",
+        "description": "AlgoExp.Easy.Run_Length_Encoder",
+        "peekOfCode": "\tcurrent = string[0] \n\tcount = 1\n\tfor i in range(1, len(string)):\n\t\tif current == string[i]:\n\t\t\tcount += 1\n\t\t\t# if str consists of the same char, have to encode\n\t\t\tif i == len(string) - 1:\n\t\t\t\tencodeToString(encoded, current, count)\n\t\telse:\n\t\t\tencodeToString(encoded, current, count)",
+        "detail": "AlgoExp.Easy.Run_Length_Encoder",
+        "documentation": {}
+    },
+    {
+        "label": "\tcount",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Run_Length_Encoder",
+        "description": "AlgoExp.Easy.Run_Length_Encoder",
+        "peekOfCode": "\tcount = 1\n\tfor i in range(1, len(string)):\n\t\tif current == string[i]:\n\t\t\tcount += 1\n\t\t\t# if str consists of the same char, have to encode\n\t\t\tif i == len(string) - 1:\n\t\t\t\tencodeToString(encoded, current, count)\n\t\telse:\n\t\t\tencodeToString(encoded, current, count)\n\t\t\tcurrent = string[i]",
+        "detail": "AlgoExp.Easy.Run_Length_Encoder",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tcurrent",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Run_Length_Encoder",
+        "description": "AlgoExp.Easy.Run_Length_Encoder",
+        "peekOfCode": "\t\t\tcurrent = string[i]\n\t\t\tcount = 1\n\t\t\t# if it's the last char the it have to call the encoder\n\t\t\tif i == len(string) - 1:\n\t\t\t\tencodeToString(encoded, current, count)\n\treturn \"\".join(encoded)\ndef encodeToString(str, char, count):\n\tif count >= 10:\n\t\tcount -= 9\n\t\tstr.append(\"9{}\".format(char))",
+        "detail": "AlgoExp.Easy.Run_Length_Encoder",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tcount",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Run_Length_Encoder",
+        "description": "AlgoExp.Easy.Run_Length_Encoder",
+        "peekOfCode": "\t\t\tcount = 1\n\t\t\t# if it's the last char the it have to call the encoder\n\t\t\tif i == len(string) - 1:\n\t\t\t\tencodeToString(encoded, current, count)\n\treturn \"\".join(encoded)\ndef encodeToString(str, char, count):\n\tif count >= 10:\n\t\tcount -= 9\n\t\tstr.append(\"9{}\".format(char))\n\t\treturn encodeToString(str, char, count)",
+        "detail": "AlgoExp.Easy.Run_Length_Encoder",
+        "documentation": {}
+    },
+    {
+        "label": "\tcurrLen",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Run_Length_Encoder",
+        "description": "AlgoExp.Easy.Run_Length_Encoder",
+        "peekOfCode": "\tcurrLen = 1\n\tfor i in range(1, len(string)):\n\t\tcurrentChar = string[i]\n\t\tprevChar = string[i-1]\n\t\t# check if the same\n\t\tif currentChar != prevChar or currLen == 9:\n\t\t\tencoded.append(str(currLen))\n\t\t\tencoded.append(prevChar)\n\t\t\tcurrLen = 0\n\t\t# increment currLen if both char are the same",
+        "detail": "AlgoExp.Easy.Run_Length_Encoder",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tcurrentChar",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Run_Length_Encoder",
+        "description": "AlgoExp.Easy.Run_Length_Encoder",
+        "peekOfCode": "\t\tcurrentChar = string[i]\n\t\tprevChar = string[i-1]\n\t\t# check if the same\n\t\tif currentChar != prevChar or currLen == 9:\n\t\t\tencoded.append(str(currLen))\n\t\t\tencoded.append(prevChar)\n\t\t\tcurrLen = 0\n\t\t# increment currLen if both char are the same\n\t\tcurrLen += 1\n\t# handle the last char",
+        "detail": "AlgoExp.Easy.Run_Length_Encoder",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tprevChar",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Run_Length_Encoder",
+        "description": "AlgoExp.Easy.Run_Length_Encoder",
+        "peekOfCode": "\t\tprevChar = string[i-1]\n\t\t# check if the same\n\t\tif currentChar != prevChar or currLen == 9:\n\t\t\tencoded.append(str(currLen))\n\t\t\tencoded.append(prevChar)\n\t\t\tcurrLen = 0\n\t\t# increment currLen if both char are the same\n\t\tcurrLen += 1\n\t# handle the last char\n\tencoded.append(str(currLen))",
+        "detail": "AlgoExp.Easy.Run_Length_Encoder",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tcurrLen",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Run_Length_Encoder",
+        "description": "AlgoExp.Easy.Run_Length_Encoder",
+        "peekOfCode": "\t\t\tcurrLen = 0\n\t\t# increment currLen if both char are the same\n\t\tcurrLen += 1\n\t# handle the last char\n\tencoded.append(str(currLen))\n\tencoded.append(string[len(string)-1])\n\treturn \"\".join(encoded)",
+        "detail": "AlgoExp.Easy.Run_Length_Encoder",
+        "documentation": {}
+    },
+    {
+        "label": "selectionSort",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Selection_Sort",
+        "description": "AlgoExp.Easy.Selection_Sort",
+        "peekOfCode": "def selectionSort(array):\n    # Write your code here.\n    if len(array) < 2:\n\t\treturn array\n\tidx = 0\n\twhile idx < len(array) - 1:\n\t\tsmallestIdx = idx\n\t\tfor i in range(idx, len(array)):\n\t\t\tif array[i] < array[smallestIdx]:\n\t\t\t\tsmallestIdx = i",
+        "detail": "AlgoExp.Easy.Selection_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "swa",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Selection_Sort",
+        "description": "AlgoExp.Easy.Selection_Sort",
+        "peekOfCode": "def swap (idx, sm, a):\n\ta[idx], a[sm] = a[sm], a[idx]",
+        "detail": "AlgoExp.Easy.Selection_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "\tidx",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Selection_Sort",
+        "description": "AlgoExp.Easy.Selection_Sort",
+        "peekOfCode": "\tidx = 0\n\twhile idx < len(array) - 1:\n\t\tsmallestIdx = idx\n\t\tfor i in range(idx, len(array)):\n\t\t\tif array[i] < array[smallestIdx]:\n\t\t\t\tsmallestIdx = i\n\t\tswap (idx, smallestIdx, array)\n\t\tidx += 1\n\treturn array\ndef swap (idx, sm, a):",
+        "detail": "AlgoExp.Easy.Selection_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tsmallestIdx",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Selection_Sort",
+        "description": "AlgoExp.Easy.Selection_Sort",
+        "peekOfCode": "\t\tsmallestIdx = idx\n\t\tfor i in range(idx, len(array)):\n\t\t\tif array[i] < array[smallestIdx]:\n\t\t\t\tsmallestIdx = i\n\t\tswap (idx, smallestIdx, array)\n\t\tidx += 1\n\treturn array\ndef swap (idx, sm, a):\n\ta[idx], a[sm] = a[sm], a[idx]",
+        "detail": "AlgoExp.Easy.Selection_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tsmallestIdx",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Selection_Sort",
+        "description": "AlgoExp.Easy.Selection_Sort",
+        "peekOfCode": "\t\t\t\tsmallestIdx = i\n\t\tswap (idx, smallestIdx, array)\n\t\tidx += 1\n\treturn array\ndef swap (idx, sm, a):\n\ta[idx], a[sm] = a[sm], a[idx]",
+        "detail": "AlgoExp.Easy.Selection_Sort",
+        "documentation": {}
+    },
+    {
+        "label": "sortedSquaredArray",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Sorted_Squared_Array",
+        "description": "AlgoExp.Easy.Sorted_Squared_Array",
+        "peekOfCode": "def sortedSquaredArray(array):\n    # With two pointers - O(N)\n    leftIdx = 0\n\trightIdx = len(array) - 1\n\tsquared = [0 for _ in array]\n\t#\n\tfor i in reversed(range(len(array))):\n\t\tleftValue = array[leftIdx]\n\t\trightValue = array[rightIdx]\n\t\t# compare abs",
+        "detail": "AlgoExp.Easy.Sorted_Squared_Array",
+        "documentation": {}
+    },
+    {
+        "label": "sortedSquaredArrayB",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Sorted_Squared_Array",
+        "description": "AlgoExp.Easy.Sorted_Squared_Array",
+        "peekOfCode": "def sortedSquaredArrayB(array):\n    # Bruit force - O(n log n)\n\tout = [0 for _ in array] # create an array of 0s with the same length as array\n    for i in range(len(array)):\n\t\tx = array[i]\n\t\tout[i] = x * x\n\tout.sort()\n\treturn out",
+        "detail": "AlgoExp.Easy.Sorted_Squared_Array",
+        "documentation": {}
+    },
+    {
+        "label": "\trightIdx",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Sorted_Squared_Array",
+        "description": "AlgoExp.Easy.Sorted_Squared_Array",
+        "peekOfCode": "\trightIdx = len(array) - 1\n\tsquared = [0 for _ in array]\n\t#\n\tfor i in reversed(range(len(array))):\n\t\tleftValue = array[leftIdx]\n\t\trightValue = array[rightIdx]\n\t\t# compare abs\n\t\tif (abs(leftValue) >= abs(rightValue)):\n\t\t\tsquared[i] = leftValue * leftValue\n\t\t\tleftIdx += 1",
+        "detail": "AlgoExp.Easy.Sorted_Squared_Array",
+        "documentation": {}
+    },
+    {
+        "label": "\tsquared",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Sorted_Squared_Array",
+        "description": "AlgoExp.Easy.Sorted_Squared_Array",
+        "peekOfCode": "\tsquared = [0 for _ in array]\n\t#\n\tfor i in reversed(range(len(array))):\n\t\tleftValue = array[leftIdx]\n\t\trightValue = array[rightIdx]\n\t\t# compare abs\n\t\tif (abs(leftValue) >= abs(rightValue)):\n\t\t\tsquared[i] = leftValue * leftValue\n\t\t\tleftIdx += 1\n\t\telse:",
+        "detail": "AlgoExp.Easy.Sorted_Squared_Array",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tleftValue",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Sorted_Squared_Array",
+        "description": "AlgoExp.Easy.Sorted_Squared_Array",
+        "peekOfCode": "\t\tleftValue = array[leftIdx]\n\t\trightValue = array[rightIdx]\n\t\t# compare abs\n\t\tif (abs(leftValue) >= abs(rightValue)):\n\t\t\tsquared[i] = leftValue * leftValue\n\t\t\tleftIdx += 1\n\t\telse:\n\t\t\tsquared[i] = rightValue * rightValue\n\t\t\trightIdx -= 1\n\treturn squared",
+        "detail": "AlgoExp.Easy.Sorted_Squared_Array",
+        "documentation": {}
+    },
+    {
+        "label": "\t\trightValue",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Sorted_Squared_Array",
+        "description": "AlgoExp.Easy.Sorted_Squared_Array",
+        "peekOfCode": "\t\trightValue = array[rightIdx]\n\t\t# compare abs\n\t\tif (abs(leftValue) >= abs(rightValue)):\n\t\t\tsquared[i] = leftValue * leftValue\n\t\t\tleftIdx += 1\n\t\telse:\n\t\t\tsquared[i] = rightValue * rightValue\n\t\t\trightIdx -= 1\n\treturn squared\ndef sortedSquaredArrayB(array):",
+        "detail": "AlgoExp.Easy.Sorted_Squared_Array",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tsquared[i]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Sorted_Squared_Array",
+        "description": "AlgoExp.Easy.Sorted_Squared_Array",
+        "peekOfCode": "\t\t\tsquared[i] = leftValue * leftValue\n\t\t\tleftIdx += 1\n\t\telse:\n\t\t\tsquared[i] = rightValue * rightValue\n\t\t\trightIdx -= 1\n\treturn squared\ndef sortedSquaredArrayB(array):\n    # Bruit force - O(n log n)\n\tout = [0 for _ in array] # create an array of 0s with the same length as array\n    for i in range(len(array)):",
+        "detail": "AlgoExp.Easy.Sorted_Squared_Array",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tsquared[i]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Sorted_Squared_Array",
+        "description": "AlgoExp.Easy.Sorted_Squared_Array",
+        "peekOfCode": "\t\t\tsquared[i] = rightValue * rightValue\n\t\t\trightIdx -= 1\n\treturn squared\ndef sortedSquaredArrayB(array):\n    # Bruit force - O(n log n)\n\tout = [0 for _ in array] # create an array of 0s with the same length as array\n    for i in range(len(array)):\n\t\tx = array[i]\n\t\tout[i] = x * x\n\tout.sort()",
+        "detail": "AlgoExp.Easy.Sorted_Squared_Array",
+        "documentation": {}
+    },
+    {
+        "label": "\tout",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Sorted_Squared_Array",
+        "description": "AlgoExp.Easy.Sorted_Squared_Array",
+        "peekOfCode": "\tout = [0 for _ in array] # create an array of 0s with the same length as array\n    for i in range(len(array)):\n\t\tx = array[i]\n\t\tout[i] = x * x\n\tout.sort()\n\treturn out",
+        "detail": "AlgoExp.Easy.Sorted_Squared_Array",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tx",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Sorted_Squared_Array",
+        "description": "AlgoExp.Easy.Sorted_Squared_Array",
+        "peekOfCode": "\t\tx = array[i]\n\t\tout[i] = x * x\n\tout.sort()\n\treturn out",
+        "detail": "AlgoExp.Easy.Sorted_Squared_Array",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tout[i]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Sorted_Squared_Array",
+        "description": "AlgoExp.Easy.Sorted_Squared_Array",
+        "peekOfCode": "\t\tout[i] = x * x\n\tout.sort()\n\treturn out",
+        "detail": "AlgoExp.Easy.Sorted_Squared_Array",
+        "documentation": {}
+    },
+    {
+        "label": "tournamentWinnerMy",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "def tournamentWinnerMy(competitions, results):\n    # My solution 1\n\tteams = {}\n    # O(n)\n\tfor i in range(len(results)):\n\t\tif (results[i] == 1):\n\t\t\twon = competitions[i][0]\n\t\telse:\n\t\t\twon = competitions[i][1]\n\t\t# Create dict of scores",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "tournamentWinner",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "def tournamentWinner(competitions, results):\n    # Write your code here.\n    lead = \"\"\n    # add lead to points dict for later comparison\n\tpoints = {lead : 0}\n    # enumarate will help create an index for each item in list\n\tfor index, competition in enumerate(competitions):\n\t\tcurrentResult = results[index]\n\t\thomeTeam, awayTeam = competition\n\t\t# get the winner",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "updateScores",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "def updateScores(team, nrPoints, points):\n\tif team not in points:\n\t\tpoints[team] = 0\n\tpoints[team] += nrPoints",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "\tteams",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "\tteams = {}\n    # O(n)\n\tfor i in range(len(results)):\n\t\tif (results[i] == 1):\n\t\t\twon = competitions[i][0]\n\t\telse:\n\t\t\twon = competitions[i][1]\n\t\t# Create dict of scores\n\t\tif won in teams:\n\t\t\tteams[won] += 3",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\twon",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "\t\t\twon = competitions[i][0]\n\t\telse:\n\t\t\twon = competitions[i][1]\n\t\t# Create dict of scores\n\t\tif won in teams:\n\t\t\tteams[won] += 3\n\t\telse:\n\t\t\tteams[won] = 3\n\t# return max value key - O(n)\n\treturn max(teams, key=teams.get)",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\twon",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "\t\t\twon = competitions[i][1]\n\t\t# Create dict of scores\n\t\tif won in teams:\n\t\t\tteams[won] += 3\n\t\telse:\n\t\t\tteams[won] = 3\n\t# return max value key - O(n)\n\treturn max(teams, key=teams.get)\n# Given solution\nWIN_NR = 1",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tteams[won]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "\t\t\tteams[won] = 3\n\t# return max value key - O(n)\n\treturn max(teams, key=teams.get)\n# Given solution\nWIN_NR = 1\nWON_POINTS = 3\ndef tournamentWinner(competitions, results):\n    # Write your code here.\n    lead = \"\"\n    # add lead to points dict for later comparison",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "WIN_NR",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "WIN_NR = 1\nWON_POINTS = 3\ndef tournamentWinner(competitions, results):\n    # Write your code here.\n    lead = \"\"\n    # add lead to points dict for later comparison\n\tpoints = {lead : 0}\n    # enumarate will help create an index for each item in list\n\tfor index, competition in enumerate(competitions):\n\t\tcurrentResult = results[index]",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "WON_POINTS",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "WON_POINTS = 3\ndef tournamentWinner(competitions, results):\n    # Write your code here.\n    lead = \"\"\n    # add lead to points dict for later comparison\n\tpoints = {lead : 0}\n    # enumarate will help create an index for each item in list\n\tfor index, competition in enumerate(competitions):\n\t\tcurrentResult = results[index]\n\t\thomeTeam, awayTeam = competition",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "\tpoints",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "\tpoints = {lead : 0}\n    # enumarate will help create an index for each item in list\n\tfor index, competition in enumerate(competitions):\n\t\tcurrentResult = results[index]\n\t\thomeTeam, awayTeam = competition\n\t\t# get the winner\n\t\twinner = homeTeam if currentResult == WIN_NR else awayTeam\n\t\t# call helper method to update scores for the winning team\n\t\tupdateScores (winner, WON_POINTS, points)\n\t\tif (points[winner] > points[lead]):",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tcurrentResult",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "\t\tcurrentResult = results[index]\n\t\thomeTeam, awayTeam = competition\n\t\t# get the winner\n\t\twinner = homeTeam if currentResult == WIN_NR else awayTeam\n\t\t# call helper method to update scores for the winning team\n\t\tupdateScores (winner, WON_POINTS, points)\n\t\tif (points[winner] > points[lead]):\n\t\t\tlead = winner\n\treturn lead\ndef updateScores(team, nrPoints, points):",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "\t\twinner",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "\t\twinner = homeTeam if currentResult == WIN_NR else awayTeam\n\t\t# call helper method to update scores for the winning team\n\t\tupdateScores (winner, WON_POINTS, points)\n\t\tif (points[winner] > points[lead]):\n\t\t\tlead = winner\n\treturn lead\ndef updateScores(team, nrPoints, points):\n\tif team not in points:\n\t\tpoints[team] = 0\n\tpoints[team] += nrPoints",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tlead",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "\t\t\tlead = winner\n\treturn lead\ndef updateScores(team, nrPoints, points):\n\tif team not in points:\n\t\tpoints[team] = 0\n\tpoints[team] += nrPoints",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tpoints[team]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Tournament_Winner",
+        "description": "AlgoExp.Easy.Tournament_Winner",
+        "peekOfCode": "\t\tpoints[team] = 0\n\tpoints[team] += nrPoints",
+        "detail": "AlgoExp.Easy.Tournament_Winner",
+        "documentation": {}
+    },
+    {
+        "label": "twoNumberSum",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Two_Num_Sum",
+        "description": "AlgoExp.Easy.Two_Num_Sum",
+        "peekOfCode": "def twoNumberSum(array, targetSum):\n    # Write your code here.\n\t# For each element in the array travers the rest of the arrray and see if the the sums match the \n\t# target sum\n\tys = {} # store the past values from array\n\tout = []\n\tfor i in array:\n\t\ty = targetSum - i\n\t\tif y in ys: # Looking if the needed difference is in the hash\n\t\t\tout.extend([i, y])",
+        "detail": "AlgoExp.Easy.Two_Num_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "twoNumberSum1",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Two_Num_Sum",
+        "description": "AlgoExp.Easy.Two_Num_Sum",
+        "peekOfCode": "def twoNumberSum1(array, targetSum):\n    # Write your code here.\n    for i in range(len(array) - 1): # No point doing the last item\n\t\t# i is the index, since range is used\n\t\tx = array[i]\n\t\tfor j in range(i + 1, len(array)):\n\t\t\ty = array[j]\n\t\t\tif x + y == targetSum:\n\t\t\t\treturn [x, y]\n\treturn []",
+        "detail": "AlgoExp.Easy.Two_Num_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "\tys",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Two_Num_Sum",
+        "description": "AlgoExp.Easy.Two_Num_Sum",
+        "peekOfCode": "\tys = {} # store the past values from array\n\tout = []\n\tfor i in array:\n\t\ty = targetSum - i\n\t\tif y in ys: # Looking if the needed difference is in the hash\n\t\t\tout.extend([i, y])\n\t\telse:\n\t\t\tys[i] = True\n\treturn out\n# More optimal for space ",
+        "detail": "AlgoExp.Easy.Two_Num_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "\tout",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Two_Num_Sum",
+        "description": "AlgoExp.Easy.Two_Num_Sum",
+        "peekOfCode": "\tout = []\n\tfor i in array:\n\t\ty = targetSum - i\n\t\tif y in ys: # Looking if the needed difference is in the hash\n\t\t\tout.extend([i, y])\n\t\telse:\n\t\t\tys[i] = True\n\treturn out\n# More optimal for space \n# Time - O(n^2)",
+        "detail": "AlgoExp.Easy.Two_Num_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "\t\ty",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Two_Num_Sum",
+        "description": "AlgoExp.Easy.Two_Num_Sum",
+        "peekOfCode": "\t\ty = targetSum - i\n\t\tif y in ys: # Looking if the needed difference is in the hash\n\t\t\tout.extend([i, y])\n\t\telse:\n\t\t\tys[i] = True\n\treturn out\n# More optimal for space \n# Time - O(n^2)\n# Space - O(1) --> no extra space was used\ndef twoNumberSum1(array, targetSum):",
+        "detail": "AlgoExp.Easy.Two_Num_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tys[i]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Two_Num_Sum",
+        "description": "AlgoExp.Easy.Two_Num_Sum",
+        "peekOfCode": "\t\t\tys[i] = True\n\treturn out\n# More optimal for space \n# Time - O(n^2)\n# Space - O(1) --> no extra space was used\ndef twoNumberSum1(array, targetSum):\n    # Write your code here.\n    for i in range(len(array) - 1): # No point doing the last item\n\t\t# i is the index, since range is used\n\t\tx = array[i]",
+        "detail": "AlgoExp.Easy.Two_Num_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tx",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Two_Num_Sum",
+        "description": "AlgoExp.Easy.Two_Num_Sum",
+        "peekOfCode": "\t\tx = array[i]\n\t\tfor j in range(i + 1, len(array)):\n\t\t\ty = array[j]\n\t\t\tif x + y == targetSum:\n\t\t\t\treturn [x, y]\n\treturn []",
+        "detail": "AlgoExp.Easy.Two_Num_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\ty",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Two_Num_Sum",
+        "description": "AlgoExp.Easy.Two_Num_Sum",
+        "peekOfCode": "\t\t\ty = array[j]\n\t\t\tif x + y == targetSum:\n\t\t\t\treturn [x, y]\n\treturn []",
+        "detail": "AlgoExp.Easy.Two_Num_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "isValidSubsequence",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Validate_Subsequence",
+        "description": "AlgoExp.Easy.Validate_Subsequence",
+        "peekOfCode": "def isValidSubsequence(array, sequence):\n    # Write your code here.\n\tpointerArray = 0\n\tpointerSequence = 0\n\twhile pointerArray < len(array) and pointerSequence < len(sequence):\n\t\tif array[pointerArray] == sequence[pointerSequence]:\n\t\t\tpointerSequence += 1\n\t\tpointerArray += 1\n\treturn pointerSequence == len(sequence)\n    # Test",
+        "detail": "AlgoExp.Easy.Validate_Subsequence",
+        "documentation": {}
+    },
+    {
+        "label": "\tpointerArray",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Validate_Subsequence",
+        "description": "AlgoExp.Easy.Validate_Subsequence",
+        "peekOfCode": "\tpointerArray = 0\n\tpointerSequence = 0\n\twhile pointerArray < len(array) and pointerSequence < len(sequence):\n\t\tif array[pointerArray] == sequence[pointerSequence]:\n\t\t\tpointerSequence += 1\n\t\tpointerArray += 1\n\treturn pointerSequence == len(sequence)\n    # Test\narray= [5, 1, 2, 22, 25, 6, -1, 8, 10]\nsequence= [1, 6, -1, 10]",
+        "detail": "AlgoExp.Easy.Validate_Subsequence",
+        "documentation": {}
+    },
+    {
+        "label": "\tpointerSequence",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Validate_Subsequence",
+        "description": "AlgoExp.Easy.Validate_Subsequence",
+        "peekOfCode": "\tpointerSequence = 0\n\twhile pointerArray < len(array) and pointerSequence < len(sequence):\n\t\tif array[pointerArray] == sequence[pointerSequence]:\n\t\t\tpointerSequence += 1\n\t\tpointerArray += 1\n\treturn pointerSequence == len(sequence)\n    # Test\narray= [5, 1, 2, 22, 25, 6, -1, 8, 10]\nsequence= [1, 6, -1, 10]\nprint (isValidSubsequence(array, sequence));",
+        "detail": "AlgoExp.Easy.Validate_Subsequence",
+        "documentation": {}
+    },
+    {
+        "label": "arrayOfProducts",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.Array_Of_Products",
+        "description": "AlgoExp.Medium.Array_Of_Products",
+        "peekOfCode": "def arrayOfProducts(array):\n    # Write your code here.\n    out = []\n    i = 0\n    while i < len(array):\n        prod = 1\n        for j in range(len(array)):\n            if j != i:\n                prod *= array[j]\n        out.append(prod)",
+        "detail": "AlgoExp.Medium.Array_Of_Products",
+        "documentation": {}
+    },
+    {
+        "label": "arrayOfProductsGiven",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.Array_Of_Products",
+        "description": "AlgoExp.Medium.Array_Of_Products",
+        "peekOfCode": "def arrayOfProductsGiven(array):\n    # Write your code here.\n    leftProd = [1 for _ in range(len(array))]\n    rightProd = [1 for _ in range(len(array))]\n    out = []\n    # calculate all products to the left of current value\n    leftRun = 1\n    for i in range(len(array)):\n            leftProd[i] = leftRun\n            leftRun *= array[i]",
+        "detail": "AlgoExp.Medium.Array_Of_Products",
+        "documentation": {}
+    },
+    {
+        "label": "firstDuplicateValue",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.First_Duplicate_Val",
+        "description": "AlgoExp.Medium.First_Duplicate_Val",
+        "peekOfCode": "def firstDuplicateValue(array):\n    # Write your code here.\n    if len(array) < 2:\n\t\treturn -1\n\tseen = set()\n\tfor nr in array:\n\t\tif nr in seen:\n\t\t\treturn nr\n\t\tseen.add(nr)\n\treturn -1",
+        "detail": "AlgoExp.Medium.First_Duplicate_Val",
+        "documentation": {}
+    },
+    {
+        "label": "firstDuplicateValueGiven",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.First_Duplicate_Val",
+        "description": "AlgoExp.Medium.First_Duplicate_Val",
+        "peekOfCode": "def firstDuplicateValueGiven(array):\n    # Write your code here.\n    if len(array) < 2:\n\t\treturn -1\n\tfor nr in array:\n\t\tmapIdx = abs(nr) - 1\n\t\t# Check if value is negative for duplicate\n\t\tif array[mapIdx] < 0:\n\t\t\treturn abs(nr)\n\t\telse:",
+        "detail": "AlgoExp.Medium.First_Duplicate_Val",
+        "documentation": {}
+    },
+    {
+        "label": "\tseen",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.First_Duplicate_Val",
+        "description": "AlgoExp.Medium.First_Duplicate_Val",
+        "peekOfCode": "\tseen = set()\n\tfor nr in array:\n\t\tif nr in seen:\n\t\t\treturn nr\n\t\tseen.add(nr)\n\treturn -1\n# Given solution #\n# Time - O(n)\n# Space - O(1)\ndef firstDuplicateValueGiven(array):",
+        "detail": "AlgoExp.Medium.First_Duplicate_Val",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tmapIdx",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.First_Duplicate_Val",
+        "description": "AlgoExp.Medium.First_Duplicate_Val",
+        "peekOfCode": "\t\tmapIdx = abs(nr) - 1\n\t\t# Check if value is negative for duplicate\n\t\tif array[mapIdx] < 0:\n\t\t\treturn abs(nr)\n\t\telse:\n\t\t\tarray[mapIdx] *= -1\n\treturn -1",
+        "detail": "AlgoExp.Medium.First_Duplicate_Val",
+        "documentation": {}
+    },
+    {
+        "label": "longestPeak",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.Longest_Peak",
+        "description": "AlgoExp.Medium.Longest_Peak",
+        "peekOfCode": "def longestPeak(array):\n    # Write your code here.\n    if len(array) < 3:\n\t\treturn 0\n\tlongest = 0\n\ti = 1\n\twhile i < len(array) - 1:\n\t\tisPeak = array[i] > array[i-1] and array[i] > array[i+1]\n\t\t# check if current index is a peak\n\t\tif not isPeak:",
+        "detail": "AlgoExp.Medium.Longest_Peak",
+        "documentation": {}
+    },
+    {
+        "label": "\tlongest",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Longest_Peak",
+        "description": "AlgoExp.Medium.Longest_Peak",
+        "peekOfCode": "\tlongest = 0\n\ti = 1\n\twhile i < len(array) - 1:\n\t\tisPeak = array[i] > array[i-1] and array[i] > array[i+1]\n\t\t# check if current index is a peak\n\t\tif not isPeak:\n\t\t\ti += 1\n\t\t\tcontinue\n\t\t# if it is -> check the following items to count longest peak\n\t\t# we move pointer by 2 indexes to compare the current and the next value (left to right)",
+        "detail": "AlgoExp.Medium.Longest_Peak",
+        "documentation": {}
+    },
+    {
+        "label": "\ti",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Longest_Peak",
+        "description": "AlgoExp.Medium.Longest_Peak",
+        "peekOfCode": "\ti = 1\n\twhile i < len(array) - 1:\n\t\tisPeak = array[i] > array[i-1] and array[i] > array[i+1]\n\t\t# check if current index is a peak\n\t\tif not isPeak:\n\t\t\ti += 1\n\t\t\tcontinue\n\t\t# if it is -> check the following items to count longest peak\n\t\t# we move pointer by 2 indexes to compare the current and the next value (left to right)\n\t\tleft = i - 2 ",
+        "detail": "AlgoExp.Medium.Longest_Peak",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tisPeak",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Longest_Peak",
+        "description": "AlgoExp.Medium.Longest_Peak",
+        "peekOfCode": "\t\tisPeak = array[i] > array[i-1] and array[i] > array[i+1]\n\t\t# check if current index is a peak\n\t\tif not isPeak:\n\t\t\ti += 1\n\t\t\tcontinue\n\t\t# if it is -> check the following items to count longest peak\n\t\t# we move pointer by 2 indexes to compare the current and the next value (left to right)\n\t\tleft = i - 2 \n\t\tright = i + 2\n\t\twhile left >= 0 and array[left] < array[left+1]:",
+        "detail": "AlgoExp.Medium.Longest_Peak",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tleft",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Longest_Peak",
+        "description": "AlgoExp.Medium.Longest_Peak",
+        "peekOfCode": "\t\tleft = i - 2 \n\t\tright = i + 2\n\t\twhile left >= 0 and array[left] < array[left+1]:\n\t\t\tleft -= 1\n\t\twhile right < len(array) and array[right] < array[right-1]:\n\t\t\tright += 1\n\t\t# calc peak len\n\t\tpeakLen = right - left - 1\n\t\tif peakLen > longest:\n\t\t\tlongest = peakLen",
+        "detail": "AlgoExp.Medium.Longest_Peak",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tright",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Longest_Peak",
+        "description": "AlgoExp.Medium.Longest_Peak",
+        "peekOfCode": "\t\tright = i + 2\n\t\twhile left >= 0 and array[left] < array[left+1]:\n\t\t\tleft -= 1\n\t\twhile right < len(array) and array[right] < array[right-1]:\n\t\t\tright += 1\n\t\t# calc peak len\n\t\tpeakLen = right - left - 1\n\t\tif peakLen > longest:\n\t\t\tlongest = peakLen\n\t\t# since all valus left of the right index are part of the current peak can skip over them",
+        "detail": "AlgoExp.Medium.Longest_Peak",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tpeakLen",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Longest_Peak",
+        "description": "AlgoExp.Medium.Longest_Peak",
+        "peekOfCode": "\t\tpeakLen = right - left - 1\n\t\tif peakLen > longest:\n\t\t\tlongest = peakLen\n\t\t# since all valus left of the right index are part of the current peak can skip over them\n\t\ti = right\n\treturn longest",
+        "detail": "AlgoExp.Medium.Longest_Peak",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tlongest",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Longest_Peak",
+        "description": "AlgoExp.Medium.Longest_Peak",
+        "peekOfCode": "\t\t\tlongest = peakLen\n\t\t# since all valus left of the right index are part of the current peak can skip over them\n\t\ti = right\n\treturn longest",
+        "detail": "AlgoExp.Medium.Longest_Peak",
+        "documentation": {}
+    },
+    {
+        "label": "\t\ti",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Longest_Peak",
+        "description": "AlgoExp.Medium.Longest_Peak",
+        "peekOfCode": "\t\ti = right\n\treturn longest",
+        "detail": "AlgoExp.Medium.Longest_Peak",
+        "documentation": {}
+    },
+    {
+        "label": "isMonotonic",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.Monotonic_Array",
+        "description": "AlgoExp.Medium.Monotonic_Array",
+        "peekOfCode": "def isMonotonic(array):\n    # Write your code here.\n    if len(array) < 2:\n\t\treturn True\n\t# check if items are increasing or decreasing in value\n\t# in case where all the elements are the same we can return true\n\tchange = 0\n\ti = 0\n\twhile change == 0 and i < len(array)-1:\n\t\tif array[i] > array[i+1]:",
+        "detail": "AlgoExp.Medium.Monotonic_Array",
+        "documentation": {}
+    },
+    {
+        "label": "isMonotonicGiven",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.Monotonic_Array",
+        "description": "AlgoExp.Medium.Monotonic_Array",
+        "peekOfCode": "def isMonotonicGiven(array):\n    isNonDecreasing = True\n    isNonIncreasing = True\n    for i in range (1, len(array)):\n        if array[i] > array[i-1]:\n            isNonIncreasing = False\n        if array[i] < array[i-1]:\n            isNonDecreasing = False\n    #\n    return isNonDecreasing or isNonIncreasing",
+        "detail": "AlgoExp.Medium.Monotonic_Array",
+        "documentation": {}
+    },
+    {
+        "label": "\tchange",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Monotonic_Array",
+        "description": "AlgoExp.Medium.Monotonic_Array",
+        "peekOfCode": "\tchange = 0\n\ti = 0\n\twhile change == 0 and i < len(array)-1:\n\t\tif array[i] > array[i+1]:\n\t\t\tchange = -1\n\t\telif array[i] < array[i+1]:\n\t\t\tchange = 1\n\t\ti += 1\n\t# if all the elements were the same -> return true\n\tif change == 0:",
+        "detail": "AlgoExp.Medium.Monotonic_Array",
+        "documentation": {}
+    },
+    {
+        "label": "\ti",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Monotonic_Array",
+        "description": "AlgoExp.Medium.Monotonic_Array",
+        "peekOfCode": "\ti = 0\n\twhile change == 0 and i < len(array)-1:\n\t\tif array[i] > array[i+1]:\n\t\t\tchange = -1\n\t\telif array[i] < array[i+1]:\n\t\t\tchange = 1\n\t\ti += 1\n\t# if all the elements were the same -> return true\n\tif change == 0:\n\t\treturn True",
+        "detail": "AlgoExp.Medium.Monotonic_Array",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tchange",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Monotonic_Array",
+        "description": "AlgoExp.Medium.Monotonic_Array",
+        "peekOfCode": "\t\t\tchange = -1\n\t\telif array[i] < array[i+1]:\n\t\t\tchange = 1\n\t\ti += 1\n\t# if all the elements were the same -> return true\n\tif change == 0:\n\t\treturn True\n\t# check if the array is eithe increasing or decreasing consistently\n\tfor i in range(1, len(array)):\n\t\tif array[i] > array[i-1] and change == -1:",
+        "detail": "AlgoExp.Medium.Monotonic_Array",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tchange",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Monotonic_Array",
+        "description": "AlgoExp.Medium.Monotonic_Array",
+        "peekOfCode": "\t\t\tchange = 1\n\t\ti += 1\n\t# if all the elements were the same -> return true\n\tif change == 0:\n\t\treturn True\n\t# check if the array is eithe increasing or decreasing consistently\n\tfor i in range(1, len(array)):\n\t\tif array[i] > array[i-1] and change == -1:\n\t\t\treturn False\n\t\tif array[i] < array[i-1] and change == 1:",
+        "detail": "AlgoExp.Medium.Monotonic_Array",
+        "documentation": {}
+    },
+    {
+        "label": "moveElementToEnd",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.Move_Element_To_End",
+        "description": "AlgoExp.Medium.Move_Element_To_End",
+        "peekOfCode": "def moveElementToEnd(array, toMove):\n    # Write your code here.\n    i = 0\n\tj = len(array) - 1\n\twhile i < j:\n\t\t# swap the toMove value and the other value\n\t\tif array[i] == toMove and array[j] != toMove:\n\t\t\tarray[i], array[j] = array[j], array[i]\n\t\t\ti += 1\n\t\t\tj -= 1",
+        "detail": "AlgoExp.Medium.Move_Element_To_End",
+        "documentation": {}
+    },
+    {
+        "label": "\tj",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Move_Element_To_End",
+        "description": "AlgoExp.Medium.Move_Element_To_End",
+        "peekOfCode": "\tj = len(array) - 1\n\twhile i < j:\n\t\t# swap the toMove value and the other value\n\t\tif array[i] == toMove and array[j] != toMove:\n\t\t\tarray[i], array[j] = array[j], array[i]\n\t\t\ti += 1\n\t\t\tj -= 1\n\t\t# move left pointer if it has not found toMove value\n\t\telif array[i] != toMove:\n\t\t\ti += 1",
+        "detail": "AlgoExp.Medium.Move_Element_To_End",
+        "documentation": {}
+    },
+    {
+        "label": "smallestDifference",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.Smallest_Difference",
+        "description": "AlgoExp.Medium.Smallest_Difference",
+        "peekOfCode": "def smallestDifference(arrayOne, arrayTwo):\n    # Write your code here.\n    smallest = [arrayOne[0], arrayTwo[0]]\n\tfor i in range(len(arrayOne)):\n\t\tfor j in range(len(arrayTwo)):\n\t\t\tif abs(smallest[0] - smallest[1]) > abs(arrayOne[i] - arrayTwo[j]):\n\t\t\t\tsmallest = [arrayOne[i], arrayTwo[j]]\n\treturn smallest\n# Time - O(n log(n) + m log(m))\n# Space - O(1)",
+        "detail": "AlgoExp.Medium.Smallest_Difference",
+        "documentation": {}
+    },
+    {
+        "label": "smallestDifferenceGiven",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.Smallest_Difference",
+        "description": "AlgoExp.Medium.Smallest_Difference",
+        "peekOfCode": "def smallestDifferenceGiven(arrayOne, arrayTwo):\n    # Write your code here.\n    # sort both arrays\n\tarrayOne.sort()\n\tarrayTwo.sort()\n\t# set up pointers\n\tp1 = 0\n\tp2 = 0\n\t# track smallest diff and pair\n\tsmallestPair = []",
+        "detail": "AlgoExp.Medium.Smallest_Difference",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tsmallest",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Smallest_Difference",
+        "description": "AlgoExp.Medium.Smallest_Difference",
+        "peekOfCode": "\t\t\t\tsmallest = [arrayOne[i], arrayTwo[j]]\n\treturn smallest\n# Time - O(n log(n) + m log(m))\n# Space - O(1)\ndef smallestDifferenceGiven(arrayOne, arrayTwo):\n    # Write your code here.\n    # sort both arrays\n\tarrayOne.sort()\n\tarrayTwo.sort()\n\t# set up pointers",
+        "detail": "AlgoExp.Medium.Smallest_Difference",
+        "documentation": {}
+    },
+    {
+        "label": "\tp1",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Smallest_Difference",
+        "description": "AlgoExp.Medium.Smallest_Difference",
+        "peekOfCode": "\tp1 = 0\n\tp2 = 0\n\t# track smallest diff and pair\n\tsmallestPair = []\n\tsmallest = float(\"inf\")\n\t# keep itterating till all numbers are covered\n\twhile p1 < len(arrayOne) and p2 < len(arrayTwo):\n\t\tfirst = arrayOne[p1]\n\t\tsecond = arrayTwo[p2]\n\t\tcurrentDiff = abs(first - second)",
+        "detail": "AlgoExp.Medium.Smallest_Difference",
+        "documentation": {}
+    },
+    {
+        "label": "\tp2",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Smallest_Difference",
+        "description": "AlgoExp.Medium.Smallest_Difference",
+        "peekOfCode": "\tp2 = 0\n\t# track smallest diff and pair\n\tsmallestPair = []\n\tsmallest = float(\"inf\")\n\t# keep itterating till all numbers are covered\n\twhile p1 < len(arrayOne) and p2 < len(arrayTwo):\n\t\tfirst = arrayOne[p1]\n\t\tsecond = arrayTwo[p2]\n\t\tcurrentDiff = abs(first - second)\n\t\t# check which pointer to increment",
+        "detail": "AlgoExp.Medium.Smallest_Difference",
+        "documentation": {}
+    },
+    {
+        "label": "\tsmallestPair",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Smallest_Difference",
+        "description": "AlgoExp.Medium.Smallest_Difference",
+        "peekOfCode": "\tsmallestPair = []\n\tsmallest = float(\"inf\")\n\t# keep itterating till all numbers are covered\n\twhile p1 < len(arrayOne) and p2 < len(arrayTwo):\n\t\tfirst = arrayOne[p1]\n\t\tsecond = arrayTwo[p2]\n\t\tcurrentDiff = abs(first - second)\n\t\t# check which pointer to increment\n\t\tif first > second:\n\t\t\tp2 += 1",
+        "detail": "AlgoExp.Medium.Smallest_Difference",
+        "documentation": {}
+    },
+    {
+        "label": "\tsmallest",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Smallest_Difference",
+        "description": "AlgoExp.Medium.Smallest_Difference",
+        "peekOfCode": "\tsmallest = float(\"inf\")\n\t# keep itterating till all numbers are covered\n\twhile p1 < len(arrayOne) and p2 < len(arrayTwo):\n\t\tfirst = arrayOne[p1]\n\t\tsecond = arrayTwo[p2]\n\t\tcurrentDiff = abs(first - second)\n\t\t# check which pointer to increment\n\t\tif first > second:\n\t\t\tp2 += 1\n\t\telif first < second:",
+        "detail": "AlgoExp.Medium.Smallest_Difference",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tfirst",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Smallest_Difference",
+        "description": "AlgoExp.Medium.Smallest_Difference",
+        "peekOfCode": "\t\tfirst = arrayOne[p1]\n\t\tsecond = arrayTwo[p2]\n\t\tcurrentDiff = abs(first - second)\n\t\t# check which pointer to increment\n\t\tif first > second:\n\t\t\tp2 += 1\n\t\telif first < second:\n\t\t\tp1 += 1\n\t\telse:\n\t\t\treturn [first, second]",
+        "detail": "AlgoExp.Medium.Smallest_Difference",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tsecond",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Smallest_Difference",
+        "description": "AlgoExp.Medium.Smallest_Difference",
+        "peekOfCode": "\t\tsecond = arrayTwo[p2]\n\t\tcurrentDiff = abs(first - second)\n\t\t# check which pointer to increment\n\t\tif first > second:\n\t\t\tp2 += 1\n\t\telif first < second:\n\t\t\tp1 += 1\n\t\telse:\n\t\t\treturn [first, second]\n\t\t# check if current pair itteration is less than the previos ones",
+        "detail": "AlgoExp.Medium.Smallest_Difference",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tcurrentDiff",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Smallest_Difference",
+        "description": "AlgoExp.Medium.Smallest_Difference",
+        "peekOfCode": "\t\tcurrentDiff = abs(first - second)\n\t\t# check which pointer to increment\n\t\tif first > second:\n\t\t\tp2 += 1\n\t\telif first < second:\n\t\t\tp1 += 1\n\t\telse:\n\t\t\treturn [first, second]\n\t\t# check if current pair itteration is less than the previos ones\n\t\tif smallest > currentDiff:",
+        "detail": "AlgoExp.Medium.Smallest_Difference",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tsmallest",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Smallest_Difference",
+        "description": "AlgoExp.Medium.Smallest_Difference",
+        "peekOfCode": "\t\t\tsmallest = currentDiff\n\t\t\tsmallestPair = [first, second]\n\treturn smallestPair",
+        "detail": "AlgoExp.Medium.Smallest_Difference",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tsmallestPair",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Smallest_Difference",
+        "description": "AlgoExp.Medium.Smallest_Difference",
+        "peekOfCode": "\t\t\tsmallestPair = [first, second]\n\treturn smallestPair",
+        "detail": "AlgoExp.Medium.Smallest_Difference",
+        "documentation": {}
+    },
+    {
+        "label": "spiralTraverse",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.Spiral_Traverse",
+        "description": "AlgoExp.Medium.Spiral_Traverse",
+        "peekOfCode": "def spiralTraverse(array):\n    # Write your code here.\n    startRow = 0\n\tendRow = len(array) - 1\n\tstartCol = 0\n\tendCol = len(array[0]) - 1\n\tresults = []\n\t# \n\twhile startRow <= endRow and startCol <= endCol:\n\t\t# Go left -> itterate col",
+        "detail": "AlgoExp.Medium.Spiral_Traverse",
+        "documentation": {}
+    },
+    {
+        "label": "\tendRow",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Spiral_Traverse",
+        "description": "AlgoExp.Medium.Spiral_Traverse",
+        "peekOfCode": "\tendRow = len(array) - 1\n\tstartCol = 0\n\tendCol = len(array[0]) - 1\n\tresults = []\n\t# \n\twhile startRow <= endRow and startCol <= endCol:\n\t\t# Go left -> itterate col\n\t\tfor col in range(startCol, endCol+1):\n\t\t\tresults.append(array[startCol][col])\n\t\t# Go down -> itterate row",
+        "detail": "AlgoExp.Medium.Spiral_Traverse",
+        "documentation": {}
+    },
+    {
+        "label": "\tstartCol",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Spiral_Traverse",
+        "description": "AlgoExp.Medium.Spiral_Traverse",
+        "peekOfCode": "\tstartCol = 0\n\tendCol = len(array[0]) - 1\n\tresults = []\n\t# \n\twhile startRow <= endRow and startCol <= endCol:\n\t\t# Go left -> itterate col\n\t\tfor col in range(startCol, endCol+1):\n\t\t\tresults.append(array[startCol][col])\n\t\t# Go down -> itterate row\n\t\tfor row in range(startRow + 1, endRow + 1):",
+        "detail": "AlgoExp.Medium.Spiral_Traverse",
+        "documentation": {}
+    },
+    {
+        "label": "\tendCol",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Spiral_Traverse",
+        "description": "AlgoExp.Medium.Spiral_Traverse",
+        "peekOfCode": "\tendCol = len(array[0]) - 1\n\tresults = []\n\t# \n\twhile startRow <= endRow and startCol <= endCol:\n\t\t# Go left -> itterate col\n\t\tfor col in range(startCol, endCol+1):\n\t\t\tresults.append(array[startCol][col])\n\t\t# Go down -> itterate row\n\t\tfor row in range(startRow + 1, endRow + 1):\n\t\t\tresults.append(array[row][endCol])",
+        "detail": "AlgoExp.Medium.Spiral_Traverse",
+        "documentation": {}
+    },
+    {
+        "label": "\tresults",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Spiral_Traverse",
+        "description": "AlgoExp.Medium.Spiral_Traverse",
+        "peekOfCode": "\tresults = []\n\t# \n\twhile startRow <= endRow and startCol <= endCol:\n\t\t# Go left -> itterate col\n\t\tfor col in range(startCol, endCol+1):\n\t\t\tresults.append(array[startCol][col])\n\t\t# Go down -> itterate row\n\t\tfor row in range(startRow + 1, endRow + 1):\n\t\t\tresults.append(array[row][endCol])\n\t\t# Go left -> reverse and itterate through col",
+        "detail": "AlgoExp.Medium.Spiral_Traverse",
+        "documentation": {}
+    },
+    {
+        "label": "threeNumberSum",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.Three_Number_Sum",
+        "description": "AlgoExp.Medium.Three_Number_Sum",
+        "peekOfCode": "def threeNumberSum(array, targetSum):\n    if len(array) < 3:\n\t\treturn []\n\t# sort array\n\tarray.sort()\n\t# prep pointers and container\n\tsums = []\n\t# check if there are 3 values that sum to targetSum\n\t# itterate through array and set each number to current, left to i+1 and right to len(array) - 1\n\tfor i in range(len(array)):",
+        "detail": "AlgoExp.Medium.Three_Number_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "\tsums",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Three_Number_Sum",
+        "description": "AlgoExp.Medium.Three_Number_Sum",
+        "peekOfCode": "\tsums = []\n\t# check if there are 3 values that sum to targetSum\n\t# itterate through array and set each number to current, left to i+1 and right to len(array) - 1\n\tfor i in range(len(array)):\n\t\tcurrent = array[i]\n\t\tleft = i + 1\n\t\tright = len(array) - 1\n\t\t# use pointers to check if there is any combination that get's the targetSum\n\t\twhile left < right:\n\t\t\tleftVal = array[left]",
+        "detail": "AlgoExp.Medium.Three_Number_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tcurrent",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Three_Number_Sum",
+        "description": "AlgoExp.Medium.Three_Number_Sum",
+        "peekOfCode": "\t\tcurrent = array[i]\n\t\tleft = i + 1\n\t\tright = len(array) - 1\n\t\t# use pointers to check if there is any combination that get's the targetSum\n\t\twhile left < right:\n\t\t\tleftVal = array[left]\n\t\t\trightVal = array[right]\n\t\t\t# if threeNumberSum is more than target, we need to shift the RIGHT pointer --> will reduce overall sum\n\t\t\tif current + leftVal + rightVal > targetSum:\n\t\t\t\tright -= 1",
+        "detail": "AlgoExp.Medium.Three_Number_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tleft",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Three_Number_Sum",
+        "description": "AlgoExp.Medium.Three_Number_Sum",
+        "peekOfCode": "\t\tleft = i + 1\n\t\tright = len(array) - 1\n\t\t# use pointers to check if there is any combination that get's the targetSum\n\t\twhile left < right:\n\t\t\tleftVal = array[left]\n\t\t\trightVal = array[right]\n\t\t\t# if threeNumberSum is more than target, we need to shift the RIGHT pointer --> will reduce overall sum\n\t\t\tif current + leftVal + rightVal > targetSum:\n\t\t\t\tright -= 1\n\t\t\t# if threeNumberSum is more than target, we need to shift the LEFT pointer --> will reduce overall sum",
+        "detail": "AlgoExp.Medium.Three_Number_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "\t\tright",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Three_Number_Sum",
+        "description": "AlgoExp.Medium.Three_Number_Sum",
+        "peekOfCode": "\t\tright = len(array) - 1\n\t\t# use pointers to check if there is any combination that get's the targetSum\n\t\twhile left < right:\n\t\t\tleftVal = array[left]\n\t\t\trightVal = array[right]\n\t\t\t# if threeNumberSum is more than target, we need to shift the RIGHT pointer --> will reduce overall sum\n\t\t\tif current + leftVal + rightVal > targetSum:\n\t\t\t\tright -= 1\n\t\t\t# if threeNumberSum is more than target, we need to shift the LEFT pointer --> will reduce overall sum\n\t\t\telif current + leftVal + rightVal < targetSum:",
+        "detail": "AlgoExp.Medium.Three_Number_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tleftVal",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Three_Number_Sum",
+        "description": "AlgoExp.Medium.Three_Number_Sum",
+        "peekOfCode": "\t\t\tleftVal = array[left]\n\t\t\trightVal = array[right]\n\t\t\t# if threeNumberSum is more than target, we need to shift the RIGHT pointer --> will reduce overall sum\n\t\t\tif current + leftVal + rightVal > targetSum:\n\t\t\t\tright -= 1\n\t\t\t# if threeNumberSum is more than target, we need to shift the LEFT pointer --> will reduce overall sum\n\t\t\telif current + leftVal + rightVal < targetSum:\n\t\t\t\tleft += 1\n\t\t\t# if we found targetSum, append to the sums array and move one of the pointers\n\t\t\telse:",
+        "detail": "AlgoExp.Medium.Three_Number_Sum",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\trightVal",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Three_Number_Sum",
+        "description": "AlgoExp.Medium.Three_Number_Sum",
+        "peekOfCode": "\t\t\trightVal = array[right]\n\t\t\t# if threeNumberSum is more than target, we need to shift the RIGHT pointer --> will reduce overall sum\n\t\t\tif current + leftVal + rightVal > targetSum:\n\t\t\t\tright -= 1\n\t\t\t# if threeNumberSum is more than target, we need to shift the LEFT pointer --> will reduce overall sum\n\t\t\telif current + leftVal + rightVal < targetSum:\n\t\t\t\tleft += 1\n\t\t\t# if we found targetSum, append to the sums array and move one of the pointers\n\t\t\telse:\n\t\t\t\tsums.append([current, leftVal, rightVal])",
+        "detail": "AlgoExp.Medium.Three_Number_Sum",
+        "documentation": {}
+    }
+]
