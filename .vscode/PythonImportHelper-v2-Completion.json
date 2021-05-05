@@ -1332,6 +1332,60 @@
         "documentation": {}
     },
     {
+        "label": "mergeOverlappingIntervals",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "description": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "peekOfCode": "def mergeOverlappingIntervals(intervals):\n    # Write your code here.\n\tif len(intervals) < 2:\n\t\treturn intervals\n\tsortedInt = sorted(intervals, key=lambda x: x[0])\n\t# create a new merged list\n\tmergedInt = []\n\t# get reference to first item in sorted list\n\tcurrentInt = sortedInt[0] # reference\n\t# add it to the merged list",
+        "detail": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "documentation": {}
+    },
+    {
+        "label": "\tsortedInt",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "description": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "peekOfCode": "\tsortedInt = sorted(intervals, key=lambda x: x[0])\n\t# create a new merged list\n\tmergedInt = []\n\t# get reference to first item in sorted list\n\tcurrentInt = sortedInt[0] # reference\n\t# add it to the merged list\n\tmergedInt.append(currentInt)\n\t# travers the rest of the merged list and check for overlap\n\tfor nextInt in sortedInt:\n\t\t_, currentEnd = currentInt",
+        "detail": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "documentation": {}
+    },
+    {
+        "label": "\tmergedInt",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "description": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "peekOfCode": "\tmergedInt = []\n\t# get reference to first item in sorted list\n\tcurrentInt = sortedInt[0] # reference\n\t# add it to the merged list\n\tmergedInt.append(currentInt)\n\t# travers the rest of the merged list and check for overlap\n\tfor nextInt in sortedInt:\n\t\t_, currentEnd = currentInt\n\t\tnextStart, nextEnd = nextInt\n\t\t# if there is overlap, just take the largest of the 2 intevals second nr",
+        "detail": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "documentation": {}
+    },
+    {
+        "label": "\tcurrentInt",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "description": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "peekOfCode": "\tcurrentInt = sortedInt[0] # reference\n\t# add it to the merged list\n\tmergedInt.append(currentInt)\n\t# travers the rest of the merged list and check for overlap\n\tfor nextInt in sortedInt:\n\t\t_, currentEnd = currentInt\n\t\tnextStart, nextEnd = nextInt\n\t\t# if there is overlap, just take the largest of the 2 intevals second nr\n\t\tif currentEnd >= nextStart:\n\t\t\t# since we have it by reference, updating this is gonna update the currentInt in the mergedInt",
+        "detail": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tcurrentInt[1]",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "description": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "peekOfCode": "\t\t\tcurrentInt[1] = max(currentEnd, nextEnd)\n\t\telse:\n\t\t\t# if there is no overlap, update reference and add it to the new list\n\t\t\tcurrentInt = nextInt\n\t\t\tmergedInt.append(currentInt)\n\treturn mergedInt",
+        "detail": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tcurrentInt",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "description": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "peekOfCode": "\t\t\tcurrentInt = nextInt\n\t\t\tmergedInt.append(currentInt)\n\treturn mergedInt",
+        "detail": "AlgoExp.Medium.Merged_Overlapping_Intervals",
+        "documentation": {}
+    },
+    {
         "label": "isMonotonic",
         "kind": 2,
         "importPath": "AlgoExp.Medium.Monotonic_Array",
