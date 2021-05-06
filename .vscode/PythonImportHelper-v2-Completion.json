@@ -1323,6 +1323,51 @@
         "documentation": {}
     },
     {
+        "label": "BST",
+        "kind": 6,
+        "importPath": "AlgoExp.Medium.BST_Validation",
+        "description": "AlgoExp.Medium.BST_Validation",
+        "peekOfCode": "class BST:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\ndef validateBst(tree):\n    # Write your code here.\n    return helpBST(tree, float(\"-inf\"), float(\"+inf\"))\n# Time - O(n)\n# Space - O(d) where d is the depth of the tree due to recursion",
+        "detail": "AlgoExp.Medium.BST_Validation",
+        "documentation": {}
+    },
+    {
+        "label": "validateBst",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.BST_Validation",
+        "description": "AlgoExp.Medium.BST_Validation",
+        "peekOfCode": "def validateBst(tree):\n    # Write your code here.\n    return helpBST(tree, float(\"-inf\"), float(\"+inf\"))\n# Time - O(n)\n# Space - O(d) where d is the depth of the tree due to recursion\ndef helpBST(node, min, max):\n\tif node is None:\n\t\treturn True\n\telif node.value < min or node.value >= max:\n\t\treturn False",
+        "detail": "AlgoExp.Medium.BST_Validation",
+        "documentation": {}
+    },
+    {
+        "label": "helpBST",
+        "kind": 2,
+        "importPath": "AlgoExp.Medium.BST_Validation",
+        "description": "AlgoExp.Medium.BST_Validation",
+        "peekOfCode": "def helpBST(node, min, max):\n\tif node is None:\n\t\treturn True\n\telif node.value < min or node.value >= max:\n\t\treturn False\n\t# check left and right sub-trees\n\tleftSubValid = helpBST(node.left, min, node.value)\n\trightSubValid = helpBST(node.right, node.value, max)\n\treturn leftSubValid and rightSubValid",
+        "detail": "AlgoExp.Medium.BST_Validation",
+        "documentation": {}
+    },
+    {
+        "label": "\tleftSubValid",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.BST_Validation",
+        "description": "AlgoExp.Medium.BST_Validation",
+        "peekOfCode": "\tleftSubValid = helpBST(node.left, min, node.value)\n\trightSubValid = helpBST(node.right, node.value, max)\n\treturn leftSubValid and rightSubValid",
+        "detail": "AlgoExp.Medium.BST_Validation",
+        "documentation": {}
+    },
+    {
+        "label": "\trightSubValid",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.BST_Validation",
+        "description": "AlgoExp.Medium.BST_Validation",
+        "peekOfCode": "\trightSubValid = helpBST(node.right, node.value, max)\n\treturn leftSubValid and rightSubValid",
+        "detail": "AlgoExp.Medium.BST_Validation",
+        "documentation": {}
+    },
+    {
         "label": "firstDuplicateValue",
         "kind": 2,
         "importPath": "AlgoExp.Medium.First_Duplicate_Val",
