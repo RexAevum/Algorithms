@@ -1215,6 +1215,114 @@
         "documentation": {}
     },
     {
+        "label": "BST",
+        "kind": 6,
+        "importPath": "AlgoExp.Medium.BST_Construction",
+        "description": "AlgoExp.Medium.BST_Construction",
+        "peekOfCode": "class BST:\n    def __init__(self, value):\n        self.value = value\n        self.left = None\n        self.right = None\n\t# insert node into a tree\n\t# Time - O(n) | Avg - O(log n)\n\t# Space - O(n) | Avg - O(log n)\n    def insert(self, value):\n\t\tif self.value > value:",
+        "detail": "AlgoExp.Medium.BST_Construction",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tself.left",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.BST_Construction",
+        "description": "AlgoExp.Medium.BST_Construction",
+        "peekOfCode": "\t\t\t\tself.left = BST(value)\n\t\t\telse:\n\t\t\t\tself.left.insert(value)\n\t\telse:\n\t\t\tif self.right is None:\n\t\t\t\tself.right = BST(value)\n\t\t\telse:\n\t\t\t\tself.right.insert(value)\n        return self\n\t# check if value in tree",
+        "detail": "AlgoExp.Medium.BST_Construction",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tself.right",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.BST_Construction",
+        "description": "AlgoExp.Medium.BST_Construction",
+        "peekOfCode": "\t\t\t\tself.right = BST(value)\n\t\t\telse:\n\t\t\t\tself.right.insert(value)\n        return self\n\t# check if value in tree\n\t# Time - O(n) | Avg - O(log n)\n\t# Space - O(n) | Avg - O(log n)\n    def contains(self, value):\n        # Write your code here.\n        if self.value == value:",
+        "detail": "AlgoExp.Medium.BST_Construction",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tself.value",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.BST_Construction",
+        "description": "AlgoExp.Medium.BST_Construction",
+        "peekOfCode": "\t\t\t\tself.value = self.right.getMin()\n\t\t\t\tself.right.remove(self.value, self)\n\t\t\telif p is None:\n\t\t\t\tif self.left is not None:\n\t\t\t\t\tself.value = self.left.value\n\t\t\t\t\tself.right = self.left.right\n\t\t\t\t\tself.left = self.left.left\n\t\t\t\telif self.right is not None:\n\t\t\t\t\tself.value = self.right.value\n\t\t\t\t\tself.right = self.right.right",
+        "detail": "AlgoExp.Medium.BST_Construction",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\t\tself.value",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.BST_Construction",
+        "description": "AlgoExp.Medium.BST_Construction",
+        "peekOfCode": "\t\t\t\t\tself.value = self.left.value\n\t\t\t\t\tself.right = self.left.right\n\t\t\t\t\tself.left = self.left.left\n\t\t\t\telif self.right is not None:\n\t\t\t\t\tself.value = self.right.value\n\t\t\t\t\tself.right = self.right.right\n\t\t\t\t\tself.left = self.right.left\n\t\t\t\telse:\n\t\t\t\t\t# single node tree\n\t\t\t\t\tpass",
+        "detail": "AlgoExp.Medium.BST_Construction",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\t\tself.right",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.BST_Construction",
+        "description": "AlgoExp.Medium.BST_Construction",
+        "peekOfCode": "\t\t\t\t\tself.right = self.left.right\n\t\t\t\t\tself.left = self.left.left\n\t\t\t\telif self.right is not None:\n\t\t\t\t\tself.value = self.right.value\n\t\t\t\t\tself.right = self.right.right\n\t\t\t\t\tself.left = self.right.left\n\t\t\t\telse:\n\t\t\t\t\t# single node tree\n\t\t\t\t\tpass\n\t\t\telif p.left == self:",
+        "detail": "AlgoExp.Medium.BST_Construction",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\t\tself.left",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.BST_Construction",
+        "description": "AlgoExp.Medium.BST_Construction",
+        "peekOfCode": "\t\t\t\t\tself.left = self.left.left\n\t\t\t\telif self.right is not None:\n\t\t\t\t\tself.value = self.right.value\n\t\t\t\t\tself.right = self.right.right\n\t\t\t\t\tself.left = self.right.left\n\t\t\t\telse:\n\t\t\t\t\t# single node tree\n\t\t\t\t\tpass\n\t\t\telif p.left == self:\n\t\t\t\tp.left = self.left if self.left is not None else self.right",
+        "detail": "AlgoExp.Medium.BST_Construction",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\t\tself.value",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.BST_Construction",
+        "description": "AlgoExp.Medium.BST_Construction",
+        "peekOfCode": "\t\t\t\t\tself.value = self.right.value\n\t\t\t\t\tself.right = self.right.right\n\t\t\t\t\tself.left = self.right.left\n\t\t\t\telse:\n\t\t\t\t\t# single node tree\n\t\t\t\t\tpass\n\t\t\telif p.left == self:\n\t\t\t\tp.left = self.left if self.left is not None else self.right\n\t\t\telif p.right == self:\n\t\t\t\tp.right = self.left if self.left is not None else self.right",
+        "detail": "AlgoExp.Medium.BST_Construction",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\t\tself.right",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.BST_Construction",
+        "description": "AlgoExp.Medium.BST_Construction",
+        "peekOfCode": "\t\t\t\t\tself.right = self.right.right\n\t\t\t\t\tself.left = self.right.left\n\t\t\t\telse:\n\t\t\t\t\t# single node tree\n\t\t\t\t\tpass\n\t\t\telif p.left == self:\n\t\t\t\tp.left = self.left if self.left is not None else self.right\n\t\t\telif p.right == self:\n\t\t\t\tp.right = self.left if self.left is not None else self.right\n\t\treturn self",
+        "detail": "AlgoExp.Medium.BST_Construction",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\t\tself.left",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.BST_Construction",
+        "description": "AlgoExp.Medium.BST_Construction",
+        "peekOfCode": "\t\t\t\t\tself.left = self.right.left\n\t\t\t\telse:\n\t\t\t\t\t# single node tree\n\t\t\t\t\tpass\n\t\t\telif p.left == self:\n\t\t\t\tp.left = self.left if self.left is not None else self.right\n\t\t\telif p.right == self:\n\t\t\t\tp.right = self.left if self.left is not None else self.right\n\t\treturn self\n\tdef getMin(self):",
+        "detail": "AlgoExp.Medium.BST_Construction",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tp.left",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.BST_Construction",
+        "description": "AlgoExp.Medium.BST_Construction",
+        "peekOfCode": "\t\t\t\tp.left = self.left if self.left is not None else self.right\n\t\t\telif p.right == self:\n\t\t\t\tp.right = self.left if self.left is not None else self.right\n\t\treturn self\n\tdef getMin(self):\n\t\tif self.left is None:\n\t\t\treturn self.value\n\t\telse:\n\t\t\treturn self.left.getMin()",
+        "detail": "AlgoExp.Medium.BST_Construction",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\t\tp.right",
+        "kind": 5,
+        "importPath": "AlgoExp.Medium.BST_Construction",
+        "description": "AlgoExp.Medium.BST_Construction",
+        "peekOfCode": "\t\t\t\tp.right = self.left if self.left is not None else self.right\n\t\treturn self\n\tdef getMin(self):\n\t\tif self.left is None:\n\t\t\treturn self.value\n\t\telse:\n\t\t\treturn self.left.getMin()",
+        "detail": "AlgoExp.Medium.BST_Construction",
+        "documentation": {}
+    },
+    {
         "label": "firstDuplicateValue",
         "kind": 2,
         "importPath": "AlgoExp.Medium.First_Duplicate_Val",
