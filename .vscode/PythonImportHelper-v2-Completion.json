@@ -387,6 +387,33 @@
         "documentation": {}
     },
     {
+        "label": "firstNonRepeatingCharacter",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.First_NonRepeating_Char",
+        "description": "AlgoExp.Easy.First_NonRepeating_Char",
+        "peekOfCode": "def firstNonRepeatingCharacter(string):\n\tcheck = {}\n\tfor char in string:\n\t\tif char in check:\n\t\t\tcheck[char] += 1\n\t\telse:\n\t\t\tcheck[char] = 1\n\tfor key, val in check.items():\n\t\tif val == 1:\n\t\t\treturn string.index(key)",
+        "detail": "AlgoExp.Easy.First_NonRepeating_Char",
+        "documentation": {}
+    },
+    {
+        "label": "\tcheck",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.First_NonRepeating_Char",
+        "description": "AlgoExp.Easy.First_NonRepeating_Char",
+        "peekOfCode": "\tcheck = {}\n\tfor char in string:\n\t\tif char in check:\n\t\t\tcheck[char] += 1\n\t\telse:\n\t\t\tcheck[char] = 1\n\tfor key, val in check.items():\n\t\tif val == 1:\n\t\t\treturn string.index(key)\n\treturn -1",
+        "detail": "AlgoExp.Easy.First_NonRepeating_Char",
+        "documentation": {}
+    },
+    {
+        "label": "\t\t\tcheck[char]",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.First_NonRepeating_Char",
+        "description": "AlgoExp.Easy.First_NonRepeating_Char",
+        "peekOfCode": "\t\t\tcheck[char] = 1\n\tfor key, val in check.items():\n\t\tif val == 1:\n\t\t\treturn string.index(key)\n\treturn -1",
+        "detail": "AlgoExp.Easy.First_NonRepeating_Char",
+        "documentation": {}
+    },
+    {
         "label": "generateDocument",
         "kind": 2,
         "importPath": "AlgoExp.Easy.Generate_Document",
