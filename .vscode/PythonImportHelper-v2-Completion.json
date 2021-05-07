@@ -972,6 +972,24 @@
         "documentation": {}
     },
     {
+        "label": "tandemBicycle",
+        "kind": 2,
+        "importPath": "AlgoExp.Easy.Tandem_Bicycle",
+        "description": "AlgoExp.Easy.Tandem_Bicycle",
+        "peekOfCode": "def tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest):\n\tredShirtSpeeds.sort()\n\tblueShirtSpeeds.sort(reverse=fastest)\n\ttotal = 0\n\tfor i in range(len(redShirtSpeeds)):\n\t\ttotal += max(redShirtSpeeds[i], blueShirtSpeeds[i])\n\treturn total",
+        "detail": "AlgoExp.Easy.Tandem_Bicycle",
+        "documentation": {}
+    },
+    {
+        "label": "\ttotal",
+        "kind": 5,
+        "importPath": "AlgoExp.Easy.Tandem_Bicycle",
+        "description": "AlgoExp.Easy.Tandem_Bicycle",
+        "peekOfCode": "\ttotal = 0\n\tfor i in range(len(redShirtSpeeds)):\n\t\ttotal += max(redShirtSpeeds[i], blueShirtSpeeds[i])\n\treturn total",
+        "detail": "AlgoExp.Easy.Tandem_Bicycle",
+        "documentation": {}
+    },
+    {
         "label": "tournamentWinnerMy",
         "kind": 2,
         "importPath": "AlgoExp.Easy.Tournament_Winner",
